@@ -1,0 +1,294 @@
+%% LaTeX Glossardefinitionen:
+%%
+%% PA-01-Projekt-PDFVersion_KuWaSys
+%% 05-04-2013
+%%
+
+
+% \newglossarystyle{myglossary}{
+% \renewenvironment{theglossary}{\begin{description}}{\end{description}}
+% \renewcommand*{\glossaryentryfield}[5]{
+%   \item[\glstarget{##1}{##2}:]
+%   % Eintragsname:
+%   \ifthenelse{\equal{##4}{\relax}}{}{\space (##4)}
+%   % (Symbol)
+%   \space ##3
+%   % Beschreibung
+%   \dotfill ##5
+%   % ...Seitenzahl
+  
+  \glossarystyle{indexgroup}
+  %\glossarystyle{long4col}
+
+\newglossaryentry{Apache Software Foundation}{
+name=Apache Software Foundation,
+description={ist eine ehrenamtlich arbeitende Organisation die sich dazu verschrieben hat Apache-Softwareprojekte zu fördern\dotfill}
+}
+
+\newglossaryentry{Apache Tomcat}{
+name=Apache Tomcat,
+description={ist ein Open Source Webserver/Webcontainer, welcher die Java Servlet bzw. JavaServer Pages Spezifikation implementiert. Er erlaubt es, in Java geschriebene Webanwendungen, auf Servlet/JSP Basis auszuführen\dotfill},
+parent=Apache Software Foundation
+}
+
+\newglossaryentry{API}{
+name=API,
+description={(=Application Programming Interface) bezeichnet die Programmierschnittstelle welche von einer Software anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird\dotfill}
+}
+
+\newglossaryentry{Archetype}{
+name=Archetype,
+description={bezeichnet, in diesem Kontext, die Vorlage für gleiche oder ähnliche Softwareprojekte die in ähnlichem Kontext, falls gewünscht, wiederverwendet werden können\dotfill},
+plural=Archetypen
+}
+
+\newglossaryentry{HTML}{
+name=HTML,
+description={(=Hypertext Markup Language) ist eine Auszeichnungssprache zur Strukturierung von Inhalten (Texten, Bildern und Hyperlinks) in Dokumenten\dotfill}
+}
+
+\newglossaryentry{JAVA}{
+name=JAVA,
+description={eine objektorientierte Programmiersprache und eingetragene Marke von Sun Microsystems\dotfill},
+}
+
+\newglossaryentry{Java Server Faces}{
+name=Java Server Faces,
+description={ist ein Webtechnologie, genauer ein Framework-Standard, zur Entwicklung von grafischen Benutzeroberflächen für Java basierte Webapplikationen.\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{JAVAdoc}{
+name=JAVAdoc,,
+description={ist ein Software Dokumentationswerkzeug, welches aus Java Quellcode, genauer gesagt den Kommentaren, diverse HTML Dokumentationsdateien erstellt. JAVAdoc ist mittlerweile fester Bestandteil des Java Development Kits\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{Java Server Pages}{
+name=Java Server Pages,
+description={Eine Java Webtechnologie\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{JSF-myFaces Core}{
+name=JSF-myFaces,
+description={ist eine freie und quelloffene Implementierung von JSF der Apache Software Foundation, welche die Standard JSF Komponenten sowie die JSF API beinhaltet. Die momentan aktuellste Version ist die Implementierung der Core JSF-2.1\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{Apache Maven}{
+name=Apache Maven,
+description={ist ein sogenanntes 'Build-Management-Tool' der Apache Software Foundation. Es basiert auf Java. Mit ihm können insbesondere Java-Programme standardisiert erstellt und verwaltet werden\dotfill}
+parent=Apache Software Foundation
+}
+
+\newglossaryentry{Multi-User Betrieb}{
+name=Multi-User Betrieb,
+description={(=Mehrbenutzerbetrieb) das Design eines Systems in welchen mehrere Benutzer gleichzeitig agieren können\dotfill}
+}
+
+\newglossaryentry{Microsoft Access Datenbank}{
+name=Microsoft Access Datenbank,
+description={ein proprietäres, von Microsoft entwickeltes Datenbankmanagmentsystem und -konzept\dotfill}
+}
+
+\newglossaryentry{XML}{
+name=XML,
+description={(=Extensible Markup Language) ist eine erweiterbare Auszeichnungssprache und wird zur Darstellung hierarchisch strukturierter Daten in Form von Textdateien verwendet\dotfill}
+}
+
+\newglossaryentry{Eclipse}{
+name=Eclipse,
+description={eine quelloffene und momentan wohl die mächtigste auf Java basierende IDE\dotfill}
+}
+
+\newglossaryentry{NetBeans}{
+name=NetBeans,
+description={eine quelloffene auf Java basierende IDE, welche sich für große Softwareprojekte eignet\dotfill}
+}
+
+\newglossaryentry{Unified Modelling Language}{
+name=Unified Modelling Language,
+description={ist eine anschauliche/zeichnerische Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von Softwareprojekten oder Teilen eines Projekts. Sie ist vielseitig anwendbar und beschreibt ein Modell exakt\dotfill}
+}
+
+\newglossaryentry{Integrated Development Environment}{
+name=Integrated Development Environment,
+description={(=integrierte Entwicklungsumgebung) ist eine Sammlung von Anwendungsprogrammen, sodass der Aufwand an zubearbeitenden Aufgaben der Softwareentwicklung möglichst klein gehalten wird\dotfill}
+}
+
+\newglossaryentry{User Interface}{
+name=User Interface,
+description={(=Benutzeroberfläche) ist die Oberfläche einer Software die dem Benutzer beim Bedienen angezeigt wird\dotfill}
+}
+
+\newglossaryentry{PostgreSQL}{
+name=PostgreSQL,
+description={ist eine quelloffene, objektrelationale Datenbankimplementierung, welche mittlerweile unter diversen Linux-Distributionen sowie Mac OS Betreibssystemen als Standard ausgeliefert wird\dotfill}
+}
+
+\newglossaryentry{JSF-myFaces Tomahawk}{
+name=JSF-myFaces Tomahawk,
+description={ist eine freie und quelloffene Implementierung von JSF der Apache Software Foundation mit erweiterteten JSF Komponenten. Die Version 2.0 ist momentan die aktuellste\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{Appliance}{
+name=Appliance,
+description={ist der Ansatz zum Design eines kombinierten Systems aus Computerhardware und speziell für diese Hardware ausgelegte oder optimierte Software bezeichnet. Diese dient meistens einer oder wenigen Anwendungen\dotfill}
+}
+
+\newglossaryentry{DMZ}{
+name=DMZ,
+description={(=ent- oder demilitarisierte Zone) ist die Bezeichnung für ein Computernetzwerk mit einem Sicherheitskonzept für die Zugriffskontrolle auf daran befindliche Server. Im wesentlichen wird dies über eine Firewall realisiert\dotfill}
+}
+
+\newglossaryentry{VMWare}{
+name=VMWare,
+description={ist eine US-amerikanische Firma, welche Software für die Virtualisierung von Betreibssystemen entwickelt. Eines der bekanntesten Produkte ist die \textit{VMWare Workstation}\dotfill}
+}
+
+\newglossaryentry{Secure Shell}{
+name=Secure Shell,
+description={Programm und Netzwerkprotokoll für den sicheren Zugriff auf einen entfernten Rechner im Netzwerk\dotfill}
+}
+
+\newglossaryentry{Turbine}{
+name=Turbine,
+description={Programm und Netzwerkprotokoll für den sicheren Zugriff auf einen entfernten Rechner im Netzwerk\dotfill}
+}
+
+\newglossaryentry{Velocity}{
+name=Velocity,
+description={Programm und Netzwerkprotokoll für den sicheren Zugriff auf einen entfernten Rechner im Netzwerk\dotfill}
+}
+
+\newglossaryentry{Cocoon}{
+name=Cocoon,
+description={Programm und Netzwerkprotokoll für den sicheren Zugriff auf einen entfernten Rechner im Netzwerk\dotfill}
+}
+
+\newglossaryentry{Struts}{
+name=Struts,
+description={Programm und Netzwerkprotokoll für den sicheren Zugriff auf einen entfernten Rechner im Netzwerk\dotfill}
+}
+
+\newglossaryentry{Java-Beans}{
+name=Java-Beans,
+description={Programm und Netzwerkprotokoll für den sicheren Zugriff auf einen entfernten Rechner im Netzwerk\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{Servlet-Container}{
+name=Servlet-Container,
+description={Allgemeine Bezeichnung eines Java-Webservers wie z.B. ein Apache Tomcat oder Glassfish\dotfill}
+}
+
+\newglossaryentry{JDK}{
+name=JDK,
+description={Allgemeine Bezeichnung eines Java-Webservers wie z.B. ein Apache Tomcat oder Glassfish\dotfill}
+}
+
+\newglossaryentry{HTTP}{
+name=HTTP,
+description={(=Hypertext Transfer Protocol) ist ein Protokoll zur Übermittlung von Daten über ein Netzwerk. Hauptsächlicher Verwendungszweck ist bspw. das Laden von Websites im Webbrowser\dotfill}
+}
+
+\newglossaryentry{POJO}{
+name=POJO,
+plural=POJOs,
+description={(=Plain Old Java Object) beschreibt ein 'ganz normales' Objekt in JAVA\dotfill}
+}
+
+\newglossaryentry{pgAdmin III}{
+name=pgAdmin III,
+description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+}
+
+\newglossaryentry{C/C++}{
+name=C/C++,
+description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+}
+
+\newglossaryentry{.Net}{
+name=.Net,
+description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+}
+
+\newglossaryentry{Perl}{
+name=Perl,
+description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+}
+
+\newglossaryentry{Python}{
+name=Python,
+description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+}
+
+\newglossaryentry{Ruby}{
+name=Ruby,
+description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+}
+
+\newglossaryentry{JDBC}{
+name=JDBC,
+description={(=Java Database Connectivity) ist die Datenbankschnittstelle der gesamten JAVA-Plattform. Diese bietet eine herstellerunabhängige Schnittstelle für Datenbanken\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{JAR}{
+name=JAR,
+description={(=Java Archive) eine JAR-Datei ist nichts anderes als eine ZIP-Datei, welche zusätzliche Metadaten in einer Datei innerhalb des Archivs 'META-INF/MANIFEST.MF' enthält. Diese Archive werden vor allem zur Weitergabe von JAVA-Klassenbibliotheken und -Programmen eingesetzt\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{Cascading Style Sheets}{
+name=Cascading Style Sheets,
+description={ist eine deklarative Sprache für Styleangaben von v.a. HTML oder XML Dokumenten\dotfill}
+}
+
+\newglossaryentry{Corporate Identity}{
+name=Corporate Identity,
+description={wird als Oberbegriff für einen gewissen Wiedererkennungswert eines oder mehrerer Style-Elemente einer Sache verwendet\dotfill}
+}
+
+\newglossaryentry{JSFUnit}{
+name=JSFUnit,
+description={ist ein JSF basierendes Framework welches für Voll- und Teilintegrationstests geeignet ist. Entwickelt wurde das Framework von der JBoss Inc. und nutzt eine vereinfachte API um schnell Testläufe zu ermöglichen\dotfill}
+}
+
+\newglossaryentry{JUnit}{
+name=JUnit,
+description={ist ein Framework mit welchem automatisierte Unit-Tests (Klassen oder Methoden) von JAVA-Applikationen umgesetzt werden können\dotfill},
+parent=JAVA
+}
+
+\newglossaryentry{Whitebox}{
+name=Whitebox,
+description={ist eine Methode der Softwaretests bei denen der Entwickler Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Blackbox)\dotfill}
+}
+
+\newglossaryentry{Blackbox}{
+name=Blackbox,
+description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+}
+
+\newglossaryentry{JBoss}{
+name=Blackbox,
+description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+}
+
+\newglossaryentry{Eclipse-Foundation}{
+name=Blackbox,
+description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+}
+
+\newglossaryentry{Git}{
+name=Blackbox,
+description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+}
+
+\newglossaryentry{Subversion}{
+name=Blackbox,
+description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+}

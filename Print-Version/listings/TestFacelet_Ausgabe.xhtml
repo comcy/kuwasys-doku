@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ui:composition template="template.xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets">
+  <ui:define name="title">Test</ui:define>
+  <ui:define name="content">
+    <h1>Vornamen und Nachnamen ausgeben</h1>
+    <h:form id="studentadd">
+      <h:panelGrid columns="1">
+	<h:outputLabel for="name" value="Der Vorname ist:" />
+	<h:outputText id="name" value="${userBean.firstName}" required="true" />
+  
+	<h:outputLabel for="lastname" value="Der Nachname ist:" />
+	<h:outputText id="lastname" value="${userBean.lastName}" required="true" >
+      </h:anelGrid>
+    </h:form>
+  </ui:define>
+</ui:composition>

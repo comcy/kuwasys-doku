@@ -1,0 +1,82 @@
+%% LaTeX Acronymdefinitionen (Abkürzungsverzeichnis):
+%%
+%% PA-01-Projekt-PDFVersion_KuWaSys
+%% 05-04-2013
+%%
+
+\begin{acronym}[FPGA]
+
+\setlength{\itemsep}{-\parsep}
+
+\acro{JSF}{Java Server Faces}
+
+\acro{JSP}{Java Server Pages}
+
+\acro{POM}{Project Object Model}
+
+\acro{IDE}{Integrated Development Environment}
+
+\acro{Webapp}{Webapplikation}
+
+\acro{UML}{Unified Modelling Language}
+
+\acro{UI}{User Interface}
+
+\acro{WWW}{World Wide Web}
+
+\acro{DMZ}{Demilitarized Zone}
+
+\acro{ER-Modell}{Entity-Relationship Modell}
+
+\acro{MVC}{Model-View-Controller}
+
+\acro{HTML}{Hypertext Markup Language}
+
+\acro{HTTP}{Hypertext Transfer Protocol}
+
+\acro{JDK}{Java Development Kit}
+
+\acro{XML}{Extensible Markup Language}
+
+\acro{API}{Application Programming Interface}
+
+\acro{POJO}{Plain Old Java Object}
+
+\acro{DB}{Datenbank}
+
+\acro{DBMS}{Datenbank Managment System}
+
+\acro{OOM}{Objektorientierte Modellierung}
+
+\acro{UEL}{Unified Expression Language}
+
+\acro{UC-Diagramm}{Use-Case-Diagramm}
+
+\acro{UC}{Use-Case}
+
+\acro{SLES}{SuSE Linux Enterprise Server}
+
+\acro{IT}{Informationstechnik}
+
+\acro{TMG}{Telemediengesetz}
+
+\acro{RstV}{Rundfunkstaatsvertrages}
+
+\acro{CSS}{Cascading Style Sheets}
+
+\acro{DBCP}{Database Connection Pool}
+
+\acro{MSG}{Musik-Sport-Gestalten}
+
+\acro{WAG}{Musik-Sport-Gestalten}
+
+\acro{WZG}{Welt-Zeit-Gesellschaft}
+
+\acro{MNT}{Mensch-Technik-Natur}
+
+\acro{CSV}{Comma Separated Values}
+
+\acro{VDL}{View Declaration Language}
+
+\end{acronym}
+

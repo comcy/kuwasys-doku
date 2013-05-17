@@ -1,0 +1,2 @@
+<input id="vorname" jsfc="h:inputText"
+    value="#{userBean.vorname}"/> 
