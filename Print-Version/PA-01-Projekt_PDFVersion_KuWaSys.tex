@@ -457,7 +457,7 @@ Maven bildet die Quellen und die Laufversion jeweils in \texttt{src} und \texttt
 
 \subsection{Verteilungs- und Versionskontrolle mit Git}
 
-Wie bereits erwähnt wurde das Projekt mit der Hilfe der Versionskontrolle Git realisiert. Git stellt, gleich neben \gls{Subversion} (SVN), das beliebteste Werzeug zur Verteilung von Daten mit Versionskontrolle dar.
+Wie bereits erwähnt wurde das Projekt mit der Hilfe der Versionskontrolle Git realisiert. Git stellt, gleich neben \gls{Subversion} (SVN) und \gls{Mercurial}, das beliebteste Werzeug zur Verteilung von Daten mit Versionskontrolle dar.
 Entwickelt wurde Git ursprünglich für Aktualisierungen des Linux-Kernels. Es verbreitete sich jedoch schnell in Kreisen der Softwareentwicklung für Verteilung, Versionskontrolle und Backup.
 Software dieser Art wird dazu verwendet alle Dateien eines Projekts bei jedem Mitwirkendem aktuell und gleich zu halten. Ein weiterer Vorteil ist es hierbei, dass auf jede beliebige Vorgängerversion zurückgegriffen werden kann. So kann bei schwerwiegenden Fehlern zu einer funktionstüchigen Version gesprungen werden. Der positive Nebeneffekt sind daher auch Backups des kompletten Projekts die im sogenannten Repository sind. 
 Obwohl der Sinn und Zweck im allgemeinen der gleiche ist, trifft man bei Git auf einige Unterschiede gegenüber traditionelleren Versionskontrollsystemen wie bspw. SVN, die kurz beschrieben werden sollen:
@@ -469,6 +469,26 @@ Obwohl der Sinn und Zweck im allgemeinen der gleiche ist, trifft man bei Git auf
 Der Datentransfer mit Git findet vor alle mit dem SSH-Protokoll statt. Unterstützt werden allerdings auch Protokolle wie...
 
 \textbf{Sicherheit}
+
+\textbf{Benutzung}
+
+Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden
+   
+git clone https://github.com/[name]/[repository.git]
+
+git add * 
+
+git commit -m Message
+
+git push origin master
+
+Ist bisher, noch kein Repository eingerichtet läuft der Vorgang wie folgt ab:
+   
+git init
+
+git add * 
+
+git commit -m 'Nachricht'
    
 Allgemeine Informationen zu Git sind auf der \iz{Git-Website}{\url{http://git-scm.com/}} zu finden. Detailierte Hilfestellungen und die genaue Bedienungsanleitung kann in der offiziellen Git-Dokumentation \cite{GitDoku} nachgeschlagen werden. 
    
