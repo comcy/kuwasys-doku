@@ -457,50 +457,199 @@ Maven bildet die Quellen und die Laufversion jeweils in \texttt{src} und \texttt
 
 \subsection{Verteilungs- und Versionskontrolle mit Git}
 
-Wie bereits erwähnt wurde das Projekt mit der Hilfe der Versionskontrolle Git realisiert. Git stellt, gleich neben \gls{Subversion} (SVN) und \gls{Mercurial}, das beliebteste Werzeug zur Verteilung von Daten mit Versionskontrolle dar.
-Entwickelt wurde Git ursprünglich für Aktualisierungen des Linux-Kernels. Es verbreitete sich jedoch schnell in Kreisen der Softwareentwicklung für Verteilung, Versionskontrolle und Backup.
-Software dieser Art wird dazu verwendet alle Dateien eines Projekts bei jedem Mitwirkendem aktuell und gleich zu halten. Ein weiterer Vorteil ist es hierbei, dass auf jede beliebige Vorgängerversion zurückgegriffen werden kann. So kann bei schwerwiegenden Fehlern zu einer funktionstüchigen Version gesprungen werden. Der positive Nebeneffekt sind daher auch Backups des kompletten Projekts die im sogenannten Repository sind. 
-Obwohl der Sinn und Zweck im allgemeinen der gleiche ist, trifft man bei Git auf einige Unterschiede gegenüber traditionelleren Versionskontrollsystemen wie bspw. SVN, die kurz beschrieben werden sollen:
-
-\textbf{Verteilung der Daten}
-
-\textbf{Datentransfer}
-
-Der Datentransfer mit Git findet vor alle mit dem SSH-Protokoll statt. Unterstützt werden allerdings auch Protokolle wie...
-
-\textbf{Sicherheit}
-
-\textbf{Benutzung}
-
-Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden
-   
-git clone https://github.com/[name]/[repository.git]
-
-git add * 
-
-git commit -m Message
-
-git push origin master
-
-Ist bisher, noch kein Repository eingerichtet läuft der Vorgang wie folgt ab:
-   
-git init
-
-git add * 
-
-git commit -m 'Nachricht'
-   
-Allgemeine Informationen zu Git sind auf der \iz{Git-Website}{\url{http://git-scm.com/}} zu finden. Detailierte Hilfestellungen und die genaue Bedienungsanleitung kann in der offiziellen Git-Dokumentation \cite{GitDoku} nachgeschlagen werden. 
-   
+Wie bereits erwähnt wurde das Projekt mit der Hilfe der Versionskontrolle Git realisiert. Git stellt, neben \gls{Subversion} (SVN) und \gls{Mercurial}, das beliebteste Werkzeug zur Verteilung von Daten mit Versionskontrolle dar.
+\newpage
 
 \begin{wrapfigure}[8]{l}{7cm}
  \begin{center}
    \includegraphics[scale=0.5]{img/git_logo.png}
  \end{center}
- \caption[\textbf{Git Logo \url{http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/273px-Git-logo.svg.png}}]{Git Logo}
+ \caption[\textbf{Git Logo}\protect\newline Quelle: \url{http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/273px-Git-logo.svg.png}]{Git Logo}
  \label{fig:git_logo}
 \end{wrapfigure}
 
+Entwickelt wurde Git ursprünglich für Aktualisierungen des Linux-Kernels. Es verbreitete sich jedoch schnell in Kreisen der Softwareentwicklung für Verteilung, Versionskontrolle und Backup.
+Software dieser Art wird dazu verwendet alle Dateien eines Projekts bei jedem Mitwirkendem aktuell und gleich zu halten. Ein weiterer Vorteil ist es hierbei, dass auf jede beliebige Vorgängerversion zurückgegriffen werden kann. So kann bei schwerwiegenden Fehlern zu einer funktionstüchigen Version gesprungen werden. Der positive Nebeneffekt sind daher auch Backups des kompletten Projekts die im sogenannten Git-Repository sind. 
+
+Obwohl der Sinn und Zweck im allgemeinen der gleiche ist, trifft man bei Git auf einige Unterschiede gegenüber traditionelleren Versionskontrollsystemen wie bspw. SVN, die kurz beschrieben werden sollen:
+
+Die Verteilung der Daten wird nicht wie bei SVN über eine zentrale Client-Server Struktur realisiert sondern über eine dezentrale Client-Server Struktur, ähnlich wie bei \gls{Peer-to-Peer} (P2P) Netzwerken \cite{MahSchP2P}. beschrieben sind. Die \prettyref{figmin:Git} stellt so eine Netzwerkverteilung dar. Dabei sind die farblichen Unterschiede der Kanten als eine Verbindung zu einem Git-Repository zu interpretieren. Die gestrichelten Linien Stellen noch nicht etablierte Verbindungen dar.
+
+% GIT-Netzwerk
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[draw,circle] at (0,0) (1) {Client/Server};
+    \node[draw,circle] at (3,-3) (2) {Client/Server};
+    \node[draw,circle] at (5,3) (3) {Client/Server};
+    \node[draw,circle] at (1,5) (4) {Client/Server};
+    \node[draw,circle] at (10,2) (5) {Client/Server};
+    \node[draw,circle] at (9,-6) (6) {Client/Server};
+    \node[draw,circle] at (4,7) (7) {Client/Server};
+    
+    \draw[-, color=blue, very thick] (1) to (2);
+    \draw[-, color=blue, very thick] (1) to (4);
+    \draw[-, color=blue, very thick] (3) to (2);
+    
+    \draw[-, out=290, in=40, color=green, very thick, dashed] (3) to (2);
+    \draw[-, color=green, very thick] (3) to (7);
+    \draw[-, color=green, very thick] (3) to (5);
+    
+    \draw[-, out=220, in=40, very thick, dashed] (5) to (6);
+    \draw[-, out=270, in=140, very thick, dashed] (2) to (6);
+    
+    \draw[-, color=red, very thick] (4) to (7);
+  \end{tikzpicture}
+  \caption[\textbf{Git-Netzwerkstruktur}]{Git-Netzwerkstruktur}
+  \label{fig:Git}
+  \label{figmin:Git}
+\end{figure}
+
+Für die Git-Verwaltung des Projekts, wurde \iz{Github}{\url{https://github.com/}} verwendet. Um mit Github arbeiten zu können wird ein gültiger Account vorrausgesetzt.
+Mit Git kann in der Konsole gearbeitet werden oder es existieren Plugins für die IDE, was die Arbeit und Entwicklung weniger aufwendig macht.
+
+An dieser Stelle soll kurz gezeigt werden wie mit Git über die Konsole gearbeitet werden kann.
+
+Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
+
+\begin{enumerate}
+  \item das bereits existierende Verzeichnis mit dessen gesamten Inhalt wird 'gecloned'. Danach können beliebige Veränderungen vorgenommen werden
+
+	%% Listing: git clone
+	\lstinputlisting[label={lst:git_clone},
+	captionpos=b,
+	belowcaptionskip=1pt,
+	caption={Git: git clone},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left,
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/git_clone.console}
+	
+
+  \item sollen die Änderungen wieder übernommen werden, müssen die entsprechenden Dateien hierfür übernommen werden. In diesem Fall werden durch den Parameter \texttt{*} alle Dateien im Verzeichnis hinzugefügt
+
+	%% Listing: git add
+	\lstinputlisting[
+	label={lst:git_add},
+	label={lstmin:git_add},
+	captionpos=b,
+	belowcaptionskip=2pt,
+	caption={Git: git clone},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/git_add.console}
+
+  \item Anschließend müssen die Dateien für das Aktualisieren vorbereitet werden. Eine Nachricht ist hierzu notwendig und wird durch den Parameter \texttt{-m} angegeben
+
+	%% Listing: git commit
+	\lstinputlisting[label={lst:git_commit}, 
+	captionpos=b,
+	belowcaptionskip=2pt,
+	caption={Git: git clone},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/git_commit.console}
+
+  \item schließlich müssen wir die Dateien ans Repository übertragen. 
+
+	%% Listing: git push
+	\lstinputlisting[
+	label={lst:git_push},
+	label={lstmin:git_push},
+	captionpos=b,
+	belowcaptionskip=2pt,
+	caption={Git: git clone},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/git_push.console}
+
+\end{enumerate}
+
+
+Ist bisher, noch kein Repository eingerichtet und ein neues soll erstellt werden, läuft der Vorgang wie folgt ab:
+
+\begin{enumerate}
+
+  \item Git initialisieren. In diesem Fall wird das aktuelle Verzeichnis also Git-Repository deklariert. In diesem kann später auch gearbeitet werden
+
+	%% Listing: git init
+	\lstinputlisting[label={lst:git_init}, 
+	captionpos=b,
+	belowcaptionskip=2pt,
+	caption={Git: git clone},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/git_init.console}
+
+  \item Dateien die übertragen werden sollen werden also dem Paket hinzugefügt \texttt{git add *}, siehe \ref{lstmin:git_add}
+  
+  \item die hinzugefügten Dateien werden für das übertragen vorbereitet \texttt{git commit -m [message]}
+  
+  \item nun muss ein Git-Repository (in diesem Fall auf Github) angelegt werden. In diesem Beispiel wird die Verbindung über \gls{HTTPS} aufgebaut. Git unterstützt aber ebenso auch Verbindungen über SSH. Diese sind generell aber mit etwas mehr Aufwand zu realisieren.   
+  
+  	%% Listing: git remote add
+	\lstinputlisting[label={lst:git_remote_add}, 
+	captionpos=b,
+	belowcaptionskip=2pt,
+	caption={Git: git clone},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/git_remote_add.console}
+
+  
+  \item nun können die 
+  
+   
+\end{enumerate}   
+   
+Allgemeine Informationen zu Git sind auf der \iz{Git-Website}{\url{http://git-scm.com/}} zu finden. Detailierte Hilfestellungen und die genaue Bedienungsanleitung kann in der offiziellen Git-Dokumentation \cite{GitDoku} nachgeschlagen werden. 
+   
 \subsubsection{JBoss Tools}
 Ein weiteres praktisches Tool zur Entwicklungsunterstützung mit \ac{JSF} ist das JBoss-Tools Paket, welches über den Download im \iz{Eclipse-Marketplace}{\url{http://marketplace.eclipse.org/node/420896\#.UZS9yKwaSKI}} direkt bezogen werden kann.
 Während der Programmierung einzelner Facelets rendert das Tools die dazugehörige Ansicht und stellt es dem Entwickler in Echtzeit dar. 
@@ -680,7 +829,7 @@ Ein Beispiel zeigt der \prettyref{lst:eigene_JSFKomponente}
 	basicstyle=\small\ttfamily,
 	showstringspaces=true,
 	keywordstyle=\bfseries\color{lila}, 
-	backgroundcolor=\color{lightgrey}]{listings/custInputComponent}
+	backgroundcolor=\color{lightgrey}]{listings/custInputComponent.xhtml}
 
 \subsubsection{Managed-Beans in JSF}
 
@@ -1497,7 +1646,7 @@ Prinzipiell wäre eine Verwendung dieser virtuellen \gls{Appliance} zum Hosting 
 
 Ein PostreSQL-Server dient zur Datenhaltung und ein Apache Tomcat 7 zur Auslieferung der \ac{Webapp}. Nach Konfiguation (und überfälligem reboot) der Astaro Firewall im Keller der Schule ist die Webapp jetzt über das Intranet an allen Rechnern im Schulnetz erreichbar (\url{http://192.168.1.222:8080/kuwasys20}). Die Erreichbarkeit über das Internet ist seit der Freischaltung der entsprechenden Ports auf den BelWü-Server und umgekehrt gegeben (\url{http://141.10.50.250:8080/kuwasys20}).
 Diese Adressen werden auf der Homepage der Schillerschule und im Intranet verlinkt, sodass keine weitere Maskierung wie Subdomains oder lokale DNS-Einträge notwendig ist.
-Die Admnistration des Ubuntu Servers kann im Intranet von einer VMWare Management Console aus erfolgen, für schnelles Eingreifen wurde ein \gls{Secure Shell} (SSH) Zugang eingerichtet, der im Internet erreichbar ist.
+Die Admnistration des Ubuntu Servers kann im Intranet von einer VMWare Management Console aus erfolgen, für schnelles Eingreifen wurde ein SSH Zugang eingerichtet, der im Internet erreichbar ist.
 
 In \prettyref{fig:Netzwerkstruktur} ist die neue Struktur des Netzwerks dargestellt.
 

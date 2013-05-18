@@ -194,6 +194,12 @@ name=HTTP,
 description={(=Hypertext Transfer Protocol) ist ein Protokoll zur Übermittlung von Daten über ein Netzwerk. Hauptsächlicher Verwendungszweck ist bspw. das Laden von Websites im Webbrowser\dotfill}
 }
 
+\newglossaryentry{HTTPS}{
+name=HTTPS,
+description={(=Hypertext Transfer Protocol Secure) ist die sichere Variante der normalen HTTP-Verbindung. Realisiert wird die Sicherheit über eine weitere Schicht im Transportprotokoll-Modell, zwischen HTTP und TCP\dotfill},
+parent=HTTP
+}
+
 \newglossaryentry{POJO}{
 name=POJO,
 plural=POJOs,
@@ -270,25 +276,35 @@ description={ist eine Methode der Softwaretests bei denen der Entwickler Kenntni
 
 \newglossaryentry{Blackbox}{
 name=Blackbox,
-description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+description={\dotfill}
 }
 
 \newglossaryentry{JBoss}{
 name=Blackbox,
-description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+description={\dotfill}
 }
 
 \newglossaryentry{Eclipse-Foundation}{
 name=Blackbox,
-description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+description={\dotfill}
 }
 
 \newglossaryentry{Git}{
 name=Blackbox,
-description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+description={\dotfill}
 }
 
 \newglossaryentry{Subversion}{
 name=Blackbox,
-description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
+description={\dotfill}
+}
+
+\newglossaryentry{Mercurial}{
+name=Blackbox,
+description={\dotfill}
+}
+
+\newglossaryentry{Peer-to-Peer}{
+name=Peer-to-Peer,
+description={sind Netzwerke in denen Teilnehmer gleichermaßen Server so wie auch Client selbst sind. Sie haben keinen zentralen Verwaltungspunkt und sind jeweils direkt miteinander selbstständig verbunden\dotfill}
 }
