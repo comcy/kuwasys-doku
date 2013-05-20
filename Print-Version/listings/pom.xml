@@ -1,0 +1,15 @@
+<packaging>war</packaging>
+<dependencies>
+  <dependency>
+    <groupId>org.apache.myfaces.core</groupId>
+    <artifactId>myfaces-api</artifactId>
+    <version>2.1.10</version>
+    <scope>compile</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.myfaces.core</groupId>
+    <artifactId>myfaces-impl</artifactId>
+    <version>2.1.10</version>
+    <scope>runtime</scope>
+  </dependency> 
+</dependencies>

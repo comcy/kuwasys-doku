@@ -14,6 +14,7 @@
 	<h:outputLabel for="lastname" value="Nachname eingeben:" />
 	<h:inputText id="lastname" value="#{userBean.lastName}" required="true" >
       </h:panelGrid>
+      <h:commandButton value="Schueler anlegen" action="#{userBean.sendUser}" />
     </h:form>
   </ui:define>
 </ui:composition>

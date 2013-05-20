@@ -1,0 +1,76 @@
+\section{Evaluierung, Fazit und Ausblick}\label{sec:Fazit und Ausblick}
+
+%% Einleitung %(
+Abschließend soll ein gesamtheitlicher Überblick der Projektarbeit gegeben werden, indem das entwickelte System komplett betrachtet wird.
+Für ein sinnvolles Fazit sollen zwei wesentliche Punkte angesprochen werden:
+\begin{enumerate}
+  \item Beurteilung der Nutzbarkeit und die gesamtheitliche Umsetzung des Projekts
+  \item Beurteilung der eingesetzten Technologien
+\end{enumerate}
+
+\subsection{Evaluierung}
+
+%% Betrachtung System %(
+An oberster Stelle stand das Ziel, die Anforderungen an das System erfolgreich umzusetzen.
+Das positive Resultat kann der engen Kooperation während der Implementierungsphase und der ausgiebigen Problemabgrenzung, wie grob zu Beginn in \prettyref{subsec:Problemstellung und -abgrenzung} beschrieben ist, angerechnet werden.
+Vor allem die ersten drei bis vier Wochen nach Projektstart dienten dazu, die Ziele zu definieren. Beinahe jede Woche hielten wir mit den verantwortlichen Personen (in \prettyref{subsec:Verantwortliche Personen} namentlich aufgeführt) der Schillerschule Aalen ein Projektmeeting ab, in welchem Ergebnisse des Projektfortschritts präsentiert und diskutiert wurden.
+Ein weiterer wichtiger Punkt, der zu diesem Ergebnis geführt hat, war das entgegengebrachte Vertrauen von Seiten der Schule.
+
+Wie es \prettyref{secmin:Implementierung} zu entnehmen ist, wurden alle Punkte der Systemanforderung erfüllt. Darüberhinaus wurden sogar zusätzliche Funktionalitäten implementiert.
+Hier wäre die Umsetzung der Export-/Importfunktionen von CSV Dateien, Funktionalität die Userdaten betreffen (bspw. Passwort-Neugenerierung) und die komplette Umsetzung der \ac{IT}-Infrastruktur der Schillerschule genannt. 
+Insofern muss der entstandene Fortschritt mit dem neuen Kurswahlsystem im Hinblick auf das erste Kursverwaltungstool gesehen werden.
+
+Das größte Manko, der nicht unterstützte Multi-User Betrieb und die Einschränkung der Lauffähigkeit begrenzt auf ein System, wurden beseitigt. Ebenso wurde mehr Wert auf ein gewisses Maß an Selbstverantwortung bei Lehrern aber auch Schülern gelegt.
+Im Idealfall wird der Admin nur noch zur Konfiguration des Systems und in Problemfällen aktiv.
+Auch die Verwaltungsassistenz wurde im neuen Tool erfolgreich umgesetzt. So werden Daten die für die Kursplanung wichtig sind vom System ermittelt und den Benutzern zur Verfügung gestellt. 
+Ebenso wurde der entwickelte Arbeitsablauf für Lehrer und Schüler umgesetzt und die Kommunikation untereinander dadruch verbessert indem Probleme Systembedingt abgefangen werden können.
+
+Als dritter und letzter Verbesserungsschritt ist die neugestaltung der Oberfläche zu sehen. Diese wurden mit Hilfe von bereits erprobten und bewährten Gestaltungselementen der Webentwicklung, die aus dem Gebiet der \ac{MCI} bekannt sind, umgesetzt (\cite{DahmM-GdMCI}, 256 ff.)  .
+
+Die eindeutige Abgrenzung von Menü, Informationen und Arbeitsbereich sind gleichermaßen umgesetzt wie die Darstellung aller Systemrelevanter Daten wie es in der Anforderung gewünscht war.
+
+Zukünftige Erweiterungen sind im System vorgesehen. Aufgrund der Modularität die sich strikt durch das ganze System zieht werden diese auch realisierbar sein.
+
+Realisierbare Erweiterungen könnten sein:
+\begin{itemize}
+  \item eine Änderungsinformationsanzeige für Admins bei bestimmten Systemereignissen, sodass ohne fundierte \ac{IT}-Kenntnisse, Fehler an Server und Datenbank frühzeitig erkannt werden können
+  \item eine interne Kommunikationsplattform für den Austausch von Informationen zwischen Lehrern und Administrator und zwischen Schülern - und Lehrern  
+  \item Erweiterungen wie Kalenderfunktionen, Stundenplan-Generierung,....
+\end{itemize}
+  
+Manche der aufgeführten Vorschläge werden bereits im Momentanen Stand der Entwicklung, ansatzweise umgesetzt. 
+Aufgrund der Fülle und Diversität der Art an Anforderungen die zu Beginn an das Projekt festgehalten wurden fanden diese jedoch in der Projektarbeit bedauerlicherweise fast keinen Platz.
+%)
+
+\subsection{Fazit und Ausblick}
+
+%% Technologien %(
+Es hat sich gezeigt, dass \ac{JSF} ein gut definierter Webentwicklungsstandard geworden ist.
+Aufgrund der Einfachheit der Handhabung kommen Anfänger der Webentwicklung aber auch Fortgeschrittene gut damit zurecht und voll auf ihre Kosten.
+Je nach Komplexität der Interaktion mit dem System sind JAVA Kenntnisse erfoderlich, in jedem Falle aber sinnvoll. 
+Eine Entwicklung die ihren Schwerpunkt auf das Design oder generell die Darstellung legt benötigt nur sehr wenige Kenntnisse im Bereich JAVA dafür aber Kenntnisse einer Seitendeklarationssprache wie HTML oder JSP.
+Sollen aber, wie es in dieser Projektarbeit der Fall war, Daten aus einer Datenbank verändert oder in eine Datenbank geschrieben werden sind fundierte Kenntnisse der Softwareentwicklung mit JAVA notwendig.
+
+Zur verwendeten Datenbank lassen sich keine besonders wichtigen oder bahnbrechenden Aussagen machen. PostgreSQL hat sich bereits über Jahre etabliert und wurde stetig weiter verbessert. 
+Die Verwendung für unerfahrene Nutzer stellt nach einer kurzen Einarbeitung kein größeres Problem dar und kann somit nur weiterempfohlen werden. 
+ 
+Die Entwicklungsunterstützung mit Maven ist bei Projekten dieser Art eine sehr große Hilfe.
+Ohne eine Verwaltungshilfe der Bibliotheken, Pakete oder der Projektverweise kann ein Projekt in dieser Größenordnung schnell in einen Bereich kommen, in welchem plötzlich der Verwaltungsaufwand steigt und schnell zur Hauptaufgabe des Entwicklers wird.
+Der Fokus schweift immer öfters vom Projekt ab. Das Resultat davon ist:
+\begin{itemize}
+	\item ein höherem Zeitaufwand für das Beheben von entstandenen Problemen durch die Verletzung von Abhängigkeiten 
+	\item mehr Fehler im Programmcode der wiederrum auch zu längeren Testphasen führt
+	\item teilweise leidet die Qualität des entstanden Codes 
+\end{itemize}
+Für viele Entwickler (oder Projektleiter) ist dies ein stark vernachlässigtes Thema.
+Ohne eine genaue Planung und ohne konkrete Vorstellungen lässt sich jedoch ein Softwareprojekt, egal welcher Größe, meist nie korrekt realisieren.  
+Dies sind alles Gründe die dafür gesorgt haben, dass das Projekt unter zu Hilfenahme des Development-Tools Maven umgesetzt wurde.
+Die Softwareentwicklung bleibt im Vordergrund.
+%)
+
+%% Rückblick %(
+Rückblickend kann dem Projekt ein voller Erfolg zugeschrieben werden.
+Funktional genügt das System den Anforderungen und sogar darüber hinaus. Der zeitliche Aufwand war sehr hoch, aber im Rahmen des Möglichen, sodass nicht von 'zu viel' gesprochen werden kann.
+Zeitliche Einbußen musste dennoch hingenommen werden. So stellten vor allem das Testen und die Integration des Systems in die Infratruktur der Schule einen langwierigen Prozess dar und sprengte den geplanten Rahmen.
+Letztenendes sorgten Dinge wie die Anleitung, die technische Dokumentation und diese Ausarbeitung der Projektarbeit für den nötigen Abschluss des Projekts.
+%)

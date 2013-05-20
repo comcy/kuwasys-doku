@@ -1,0 +1,84 @@
+\section{Einleitung}
+
+\subsection{Motivation}
+
+Im Sinne unserer Medien-Projektarbeit haben wir ein webbasiertes System zur Kurswahl und Kursverwaltung der Aalener Werkrealschule \iz{'Schillerschule'}{\url{http://www.schillerschule-aalen.de}} realisiert.
+
+Ein kurzes Portrait der Schillerschule (\cite{Sch-Po}):
+
+\begin{center}
+\textit{
+\grqq Die Schillerschule ist eine städtische Ganztagesschule mit rund 500 Schülerinnen und Schülern. Die Entwicklung zu einem Lern- und Lebensraum kennzeichnet das Profil der Schule. Wesentliche Ziele sind die Förderung von Lernen und Leistung sowie die kulturelle und gesellschaftliche Integration der Kinder und Jugendlichen mit ihren unterschiedlichen Herkunfts- und Erfahrungshorizonten.\glqq}
+\end{center}
+
+Wichtig war es, dass das Kurswahlsystem von verschiedenen Benutzern, wie Schülern sowie Lehrern, von überall aus zugänglich ist und außerdem später von einem Administrator verwaltet werden kann. Ferner sollte das gesamte Kurswahlmanagment über das neue Tool 'KuWaSys' erfolgen.
+
+Die Realisierung des Systems wurde serverseitig mit einem \gls{Apache Tomcat} und \gls{Java Server Faces} (JSF), genauer mit einer Implementierung der JSF namens \gls{JSF-myFaces Core} 2.1 und \gls{JSF-myFaces Tomahawk} in der Version 2.0, umgesetzt.
+Die Zugänglichkeit auf der Seite der Clients konnte somit über jeden beliebigen Webbrowser realisiert werden.
+
+Die benötigte Haltung der Daten sowie deren Bereitstellung wurde mit einer \gls{PostgreSQL} \ac{DB} für das gesamte System umgesetzt.
+
+Das \gls{User Interface} (UI) wurde mit \gls{HTML}, genauer gesagt mit HTML 5 umgesetzt. Der HTML Code wurde nicht wie es in der serverseitigen Programmierung üblich ist in \ac{JSF}-Dateien eingebettet, sondern in eigenständige HTML Dateien.
+Diese werden in der \ac{JSF}-Technologie kurz: 'Facelets' genannt.
+
+\subsection{Problemstellung und -abgrenzung}\label{subsec:Problemstellung und -abgrenzung}
+
+Die Schillerschule hat bereits ein 'in die Jahre gekommenes' Tool zur Realisierung der Kurswahlen von Schülern, das bis dahin genannte 'KuhWa-Tool'. Ebenso wird momentan die Verwaltung der Kurse, von Lehrern der Schule über dieses Tool abgewickelt.
+Die Schwierigkeiten welche durch das alte Tool entstanden sind können aufgrund ihrer Beschaffenheit in zwei grundlegende Kategorien eingeteilt werden:
+
+Das umständliche und nicht intuitive gestaltete \ac{UI} auf der einen Seite, die mitlerweile überholte Programmstruktur mit diverser mangelhafter Funktionalität auf der Anderen.
+Die Bedienung des Tools erweißt sich als nicht mehr praktikabel, da es erstens kompliziert zu verwalten ist und nur geschultes Lehrpersonal es bedienen kann, zweitens ist das Kurswahlsystem nur auf einer Laufzeitumgebung der Schule problemlos lauffähig und einsetzbar.
+Probleme die auf die Funktionalität der Software zurückzuführen sind und darüber hinaus für die Schule einen weitaus größeren Mehraufwand bedeuteten, haben jedoch ein weitaus größere Bedeutung für die Kurswahl der Schule, wie nur das umständlich zu bedienende Design.
+
+Das alte Tool hat keine Möglichkeiten für die Benutzerdatenverwaltung der Schüler und Lehrer der Schule. Änderungen sind schwer wieder rückgängig zu machen, Systemänderungen teilweise garnicht.
+Ein Mehrbenutzerbetrieb ist weder für Kurswahlen noch für die Verwaltung möglich.
+Ein einheitliches Konzept für die \ac{DB} ist ebenso nicht vorhanden.
+Bei der bisher verwendeten \ac{DB} handelt es sich bisher um eine lokal angelegte \gls{Microsoft Access Datenbank}. Der Zugriff auf diese ist also auch nur systemweit möglich.
+
+\subsection{Über diese Ausarbeitung}\label{subsec:Uber diese Ausarbeitung}
+
+\textbf{Sinn und Zweck der Ausarbeitung}
+
+Es soll zu Beginn erwähnt werden, dass diese Ausarbeitung nicht als eine Anleitung oder eine vollständige Dokumentation unserer Implementierung verstanden werden soll. Wobei der zweite Punkt treffender wäre. Wir wollen vor allem Einblicke in die Arbeit mit \ac{JSF}, der dazugehörigen Umgebung und die Umsetzung eines Projekts der \ac{IT} dieser Größenordnung geben. Ferner wollen wir einen strukturierten und nachvollziehbaren Verlauf unserer Entwicklungen darstellen.
+
+Die Dokumentation des in \gls{JAVA} geschriebenen Codes unserer Arbeit ist ausführlich als \gls{JAVAdoc} vorhanden und dokumentiert. Die Konfiguration der Laufzeitumgebung (Netzwerk und Webserver) und die Implementierung der \ac{DB} kann in dieser Arbeit als vollständig dargestellt angesehen werden.
+
+\textbf{Aufbau der Ausarbeitung}
+
+Diese Ausarbeitung gliedert sich in drei große Teile. 
+
+An erster Stelle befinden sich die Grundlagen die in \prettyref{sec:Grundlagen} zu finden sind. Diese werden deshalb zu Beginn beschrieben da diese für das Design und die Implementierung des neuen Systems nötig waren.
+Im Wesentlichen handelt es sich hierbei um Dinge, die für die Einrichtung einer einwandfreie Entwicklungsumgebung, sowie um Werkzeuge die von uns während des Projekts eingesetzt und benötigt wurden. Außerdem sollen grundlegende Einblicke in die \ac{JSF} und \ac{DB}-Entwicklung gegeben werden.
+
+Der zweite Teil beschäftigt sich mit der eigentlichen Modellierung (in \prettyref{sec:Modellierung}) des Systems. Hier sollen die eingesetzten Verfahren der Softwareentwicklung im Bezug auf das zu entwerfende System aufgezeigt werden.
+
+Dem dritten Teil liegt die Implementierung (in \prettyref{sec:Implementierung}) zugrunde. 
+In diesem Teil soll die Implementierung und Inbetriebnahme der wichtigsten Entwurfsmuster des Projekts, die während der Phase der Modellierung entstanden sind, behandelt werden. 
+
+Das methodische Konzept dieser Ausarbeitung ist immer von einfachen zu komplexen und von bekannten zu unbekannten Inhalten gegliedert. Dem Leser werden immer wieder neue Problematiken aufgezeigt und anhand von bekannten Lösungsansätzen anschaulich erklärt. Auch im Aufbau der Arbeit soll ein 'roter Faden' zu erkennen sein. 
+%So wird eine Beschreibung zu einer bestehenden Problematik und deren Lösungsansatz immer in die verschiedenen Rollen des System aufgeteilt und gesondert behandelt.  
+
+\textbf{Konventionen in dieser Ausarbeitung}
+
+\begin{itemize}
+  \item Fremdwörter oder Fachbegriffe:
+
+sind im Text blau geschrieben und besitzen eine Verlinkung zum Glossar im Anhang, in welchem die Begrifflichkeiten indiziert und näher erklärt werden.
+
+  \item Referenzen von Abbildungen, Listings und Tabellen:
+  
+sind ebenfalls blau und in das jeweilige Verzeichnis im Anhnag verlinkt. 
+
+
+  \item Abkürzungen (Akronyme):
+
+stehen in Klammern hinter den dazugehörigen Wörtern. Sie sind darüber hinaus im Abkürzungsverzeichnis aufgelistet.
+
+  \item \texttt{Nichtproportionalschrift}:
+
+stehen für einzelne Befehle außerhalb von Listings oder für Eigennamen (bspw. bei Softwarepaketen etc...).
+
+  \item Internet-Links (URLs):
+
+sind rot und als Fußnoten angegeben.
+\end{itemize}
