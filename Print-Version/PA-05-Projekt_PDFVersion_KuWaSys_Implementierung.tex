@@ -130,17 +130,22 @@ Vorteile dieser Vorgehensweise der Datenverarbeitung resultiert in einer einheit
 
 \subsection{Informationsdarstellung und -verarbeitung}
 
-Eine elementare Datenstrukturen im System sind Listen, welche dem User in Form einer Tabelle dargestellt werden.
+In diesem Abschnitt sollen kurz die benutzten Komponenten beschrieben werden die zur Darstellung der Informationen im System verwendet wurden.
+
+\subsubsection{Listen und Tabellen}
+
+Eine elementare Datenstrukturen im System sind Listen, welche dem User in Form einer Tabelle im Facelet dargestellt werden.
 Die Vorteile dieser Datenstruktur sind die Einfachheit der Datenhaltung sowie der Zugriff auf die Daten und Bereitstellung dieser.
 
-Grundlegend sind zwei zu unterscheidende Listen im System implementiert:
+Grundlegend sind drei zu unterscheidende Listen im System implementiert:
 \begin{enumerate}
   \item User-Listen (Schüler und Lehrer)
   \item Kurs-Listen
   \item Noten-Listen
 \end{enumerate}
 
-Dabei sind beide Listen lediglich nach Art des Inhalts ihrer Daten zu differenzieren. Die für die Benutzeroberfläche relevanten sollen kurz erläutert werden:
+Dabei sind die Listen lediglich nach Art des Inhalts zu differenzieren. 
+Die für die Benutzeroberfläche relevanten Daten sollen kurz erläutert werden. 
 
 \textbf{Schüler}
 \begin{itemize}
@@ -173,13 +178,81 @@ Dabei sind beide Listen lediglich nach Art des Inhalts ihrer Daten zu differenzi
   \item Bemerkung
 \end{itemize}
 
-Die Implementierung der Listen in Java wurde über Listen vom Typ \texttt{ArrayList<List>} umgesetzt. 
+Die Implementierung der einzelnen Listen in Java, wurde über Listen vom Typ \texttt{ArrayList<List>} der Klasse {java.util.ArrayList<E>} umgesetzt. 
+Als nächstes soll am Beispiel einer User-Liste gezeigt werden, wie diese im System implementiert wurde.
+Hierzu sind zunächst drei Dinge nötig:
+\begin{enumerate}
+  \item Facelet zur Darstellung
+  \item Managed Bean, zum Handling der Daten im Facelet
+  \item Klasse, die ein Objekt der jeweiligen Liste, mit den nötigen Attribute, repräsentiert
+\end{enumerate}
+
+% TODO
+Die Darstellung der User-Übersicht wird mit Hilfe einer Tabelle umgesetzt.
+
+%% Listing: Facelet mit Tabelle/Liste
+	\lstinputlisting[label={lst:userFacelet},
+	caption={Facelet einer kompletten User-Übersicht},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/schiller_schueler.csv}
+
+% TODO
+Grundlegende Operationen können wie gewohnt über die Managed Bean durchgeführt werden.
+
+%% Listing: UserBean
+	\lstinputlisting[label={lst:userBean},
+	caption={userBean},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/schiller_schueler.csv}
+
+Im Anschluss werden Daten aus der Datenbank benötigt...
+	
+% TODO
+
+Die Klasse User, die das User-Objekt darstellt, ist über eine \texttt{Nested Class} realisiert worden. Das bedeutet, dass die User-Klasse keine unabhängige Klasse ist sondern in einer anderen Klasse integriert ist. Im Beispiel hier ist die Klasse \texttt{User} in  der Klasse \texttt{userBean} integriert.
+
+%% Listing: Nested Class
+	\lstinputlisting[label={lst:userClass},
+	caption={User Klasse als eingebettete Klasse},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/schiller_schueler.csv}
+	
+\subsubsection{Konflikte von Terminen}
+
+\subsubsection{Bearbeitung von Daten im System}
 
 \subsection{Benutzerauthentifizierung}
 
 Einer der elementarsten Vorgänge im System ist der Login-Vorgang. Es handelt sich hierbei um einen Vorgang den jeder Benutzer egal mit welcher Rolle vor der Interkation mit dem System durchlaufen muss. Zur Verifizierung eines Users am System wird sein Kürzel, welches beim Anlegen automatisch aus Vor- und Nachnamen generiert wird, sowie ein Passwort, welches ebenfalls automatisch und randomisiert generiert wird, benötigt. Die Anmeldemaske, welche zugleich auch die Startseite des Kurswahlsystems bildet, kann in \prettyref{fig:login_KuWaSys} angesehen werden. Die Registrierung eines Users am System kann ausschließlich durch den Admin erfolgen.
 
-Für den Vorgang des Logins am System besitzt der Servlet-Container Tomcat 7 eine sehr hilfreiche und gängige Funktion der Softwareentwicklung, die Konfiguation des \ac{DBCP}s des Apache Commons Projekts (\cite{tomcatDBCP}). 
+Für den Vorgang des Logins am System besitzt der Servlet-Container Tomcat 7 eine sehr hilfreiche Funktion, die Konfiguation des \ac{DBCP}s des Apache Commons Projekts (\cite{tomcatDBCP}). 
 
 Wie bereits aus dem \prettyref{subsec:Datenbankmodellierung} bekannt ist, haben wir für unser Datenbank eine zusätzliche Tabelle 'Rolle', die mit der Tabelle 'User' in Relation steht, modelliert. Diese wird nun für die Konfiguration des \ac{DBCP}s benötigt.
 
@@ -192,6 +265,7 @@ Wie bereits aus dem \prettyref{subsec:Datenbankmodellierung} bekannt ist, haben 
  \label{fig:login_KuWaSys}
 \end{wrapfigure}
 
+% TODO
 Der \ac{DBCP} gehört zu einer Art
 
 Aufgrund der Tatsache, dass die Rollen-Tabelle mit der User-Tabelle in einer Beziehung zueinander steht, kann bei der Authentifizierung also genau auf den gewollten User zugegriffen werden. Diese Tatsache machen wir uns auch im weiteren Verlauf der Systemimplementierung zu Nutze, bspw. bei der Generierung von Benutzerdaten (\prettyref{subsec:Daten eines Benutzers}) oder aber um Daten zu manipulieren die mit dem User in Verbindung stehen.
@@ -282,6 +356,11 @@ Weiter ist es ausreichend zu wissen wann die CSV-Datei endet und schlussendlich 
 	tabsize=2,
 	backgroundcolor=\color{lightgrey}]{listings/ImportBean.java}
 
+\subsubsection{Festlegen von Usernamen}
+
+\subsubsection{Generierung von Passwörtern}
+
+
 \subsection{Kursverwaltung}
 
 Neben dem Anlegen von neuen Benutzern, muss das System auch die Funktionalität besitzen, neue Kurse hinzuzufügen.
@@ -358,7 +437,7 @@ Darstellung des Stundenplans:
 \label{fig:Stundenplan}
 \end{figure}
 
-\subsubsection{Spezielle Daten eines Kurses}
+\subsubsection{Daten von Kursen}
 
 Der Aufbau eines Kurses im System, wie aus dem ER-Modell in \prettyref{fig:ERModell} entnommen werden kann, besteht im Grunde aus einer Nummer, einem verantwortlichen Lehrer, einer Beschreibung, einem Termin, Information des dazugehörigen Fächerverbunds  und einer Teilnehmeranzahl. Allein mit diesen Information könnte ein Kurs im System dargestelltn werden. Hierbei werden jedoch die restlichen Attribute vernachlässigt. Diese sollen im folgenden näher zur Sprache kommen.  
 
@@ -428,6 +507,5 @@ Darüberhinaus legt der Admin die Pflichtkurse fest.
  \label{fig:KursVerwalten_KuWaSys}
 \end{figure}
 
-\subsubsection{Benutzerunterstützung}
-
 \subsection{Systemverwaltung}
+
