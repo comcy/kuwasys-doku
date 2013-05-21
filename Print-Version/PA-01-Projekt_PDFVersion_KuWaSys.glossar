@@ -213,27 +213,27 @@ description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.1
 
 \newglossaryentry{C/C++}{
 name=C/C++,
-description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+description={Programmiersprachen, die sogenannte Hochsprachen repräsentiere\ndotfill}
 }
 
 \newglossaryentry{.Net}{
 name=.Net,
-description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+description={ist eine von Microsoft entwickelte Software-Plattform zum Entwickeln und Ausführen von Anwendungssoftware\dotfill}
 }
 
 \newglossaryentry{Perl}{
 name=Perl,
-description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+description={plattformunabhängige und freie Skriptsprache, die heutzutage vermehrt in der Webentwicklung ihren Einsatz findet\dotfill}
 }
 
 \newglossaryentry{Python}{
 name=Python,
-description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+description={ist eine höhere Programmiersprache die zumeist als Skriptsprache benutzt wird. Sie unterstützt objektorientierte, aspektorientierte und funktionale Programmierung und gilt aufgrund der klaren Syntax als einfach zu erlernen\dotfill}
 }
 
 \newglossaryentry{Ruby}{
 name=Ruby,
-description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.14.2\dotfill}
+description={ist eine höhere interpretierte Programmiersprache (Skriptsprache). Sie unterstützt verschiedene Programmierparadigmen\dotfill}
 }
 
 \newglossaryentry{JDBC}{
@@ -276,32 +276,32 @@ description={ist eine Methode der Softwaretests bei denen der Entwickler Kenntni
 
 \newglossaryentry{Blackbox}{
 name=Blackbox,
-description={\dotfill}
+description={ist eine Methode der Softwaretests bei denen der Entwickler keine Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Whitebox)\dotfill}
 }
 
 \newglossaryentry{JBoss}{
-name=JBoss,
-description={\dotfill}
+name=JBoss Inc.,
+description={ist ein zu Red Hat gehörendes Unternehmen und einer der Vorreiter des Open-Source Modells wie man es heute kennt. Die JBoss Inc. entwickelt die unterschiedlichste Software rund um den JBoss Application Server, eines der bekanntesten und erfolgreichsten Produkte\dotfill}
 }
 
 \newglossaryentry{Eclipse-Foundation}{
 name=Eclipse-Foundation,
-description={\dotfill}
+description={ist eine nicht kommerzielle Gesellschaft die sich der Open-Source Weiterentwicklung von Eclipse-Projekten verschrieben hat\dotfill}
 }
 
 \newglossaryentry{Git}{
 name=Git,
-description={\dotfill}
+description={ist eine frei verfügbare Software zur verteilten Versionskontrolle von Projekten (Dateien und ganzen Verzeichnissen), welche ursprünglich für die Quellcode-Verwaltung des Linux-Kernels konzipiert war\dotfill}
 }
 
 \newglossaryentry{Subversion}{
 name=Subversion,
-description={\dotfill}
+description={ist eine freie Software zur Versionsverwaltung. Dabei wird die Verwaltung des Netzwerks mit einer zentralen Client-Server Lösung realisiert\dotfill}
 }
 
 \newglossaryentry{Mercurial}{
 name=Mercurial,
-description={\dotfill}
+description={plattformunabhängige Software zur Versionsverwaltung. Die Struktur ist hierbei ähnlich wie bei Git dezentral angelegt. Die Entstehungsgeschichte geht auf die selbe wie bei 'Git' zurück\dotfill}
 }
 
 \newglossaryentry{Peer-to-Peer}{
