@@ -260,6 +260,36 @@ Die Klasse User, die das User-Objekt darstellt, ist über eine \texttt{Nested Cl
 
 \subsubsection{Bearbeitung von Daten im System}
 
+\subsection{Import und Export von Datensätzen}
+Laut Aufgabenstellung war vom System eine einfache und schnelle Möglichkeit verlangt, Datensätze importieren bzw. exportieren zu können.
+Für den Export entschied man sich für CSV- und PDF-Dateien, für den Import sollten nur CSV-Dateien unterstützt werden.
+Im folgenden sollen dem Leser beide Mechanismen nähergebracht werden. 
+
+\subsubsection{CSV-Dateien Import}
+
+Für den Import einer CSV Datei...
+
+	InputStreamReader
+	
+	Tokenizer
+	
+	JSF Artefakt
+
+\subsubsection{CSV-Dateien Export}
+
+	OutputStreamWriter
+	
+	JSF Artefakt
+
+\subsubsection{PDF-Dateien Export}
+
+	OutputStreamWriter
+	
+	iText Klasse (Artefakt)
+	
+	JSF Artefakt
+
+
 \subsection{Benutzerauthentifizierung}
 
 Einer der elementarsten Vorgänge im System ist der Login-Vorgang. Es handelt sich hierbei um einen Vorgang den jeder Benutzer egal mit welcher Rolle vor der Interkation mit dem System durchlaufen muss. Zur Verifizierung eines Users am System wird sein Kürzel, welches beim Anlegen automatisch aus Vor- und Nachnamen generiert wird, sowie ein Passwort, welches ebenfalls automatisch und randomisiert generiert wird, benötigt. Die Anmeldemaske, welche zugleich auch die Startseite des Kurswahlsystems bildet, kann in \prettyref{fig:login_KuWaSys} angesehen werden. Die Registrierung eines Users am System kann ausschließlich durch den Admin erfolgen.
