@@ -136,8 +136,9 @@ Die rechteckigen Formen stellen Klassen dar, die oben als Beschriftung ihren Nam
 Die Rechtecke mit der Beschriftung \texttt{$<<$dataType$>>$ + String} stellen selbstdefinierte Datentypen dar.
 Die Besonderheit in diesem Diagramm ist die Komposition (Assoziation mit einseitg schwarzer Raute). Sie sagt aus dass die Beziehung zwischen zwei Klassen einer starke Form der Aggregation entspricht. Die Teilklasse (Notenliste) kann also nur bestehen, solange die Aggregatklasse (Kurs) auch besteht. Würde, angewendet auf dieses Beispiel, ein Kurs gelöscht werden, würde auch der dazugehörige Notenlisteneintrag gelöscht werden. (\cite{BalzertH_UML2}, 18)
 
-In unserem Projekt entstanden zum Zeitpunkt des Softwareentwurfs 3 Klassen, die später für eine Interaktion mit dem System benötigt werden. Die Klasse für die Notenübersicht und für Kurse. Die verschiedenen Rollen wurden als Unterklassen der Klasse 'User' modelliert. Einzelne Datentypen, so bspw. für Daten zur Zeiterfassung (Datum) und zur Definition einzelner konstanter Strings (Name), wie die Rollen, wurden zur Vereinfachung vorgesehen.
+In unserem Projekt entstanden zum Zeitpunkt des Softwareentwurfs 3 Klassen, die später für eine Interaktion mit dem System benötigt werden und dementsprechend die wichtigsten Objekte abbilden. Die Klasse für die Notenübersicht und für Kurse. Die verschiedenen Rollen wurden als Unterklassen der Klasse 'User' modelliert. Einzelne Datentypen, so bspw. für Daten zur Zeiterfassung (Datum) und zur Definition einzelner konstanter Strings (Name), wie die Rollen, wurden zur Vereinfachung vorgesehen.
 Die Rollennamen sowie die Multiplizitäten der Assoziationen dürften selbsterklärend sein.
+In Abschnitt \prettyref{sec:Implementierung} wird später näher auf die restlichen Handler- und Helper-Klassen eingegangen
 
 % Statisches Analyse Diagramm
 \begin{figure}[H]
