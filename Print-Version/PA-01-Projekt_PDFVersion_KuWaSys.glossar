@@ -280,27 +280,27 @@ description={\dotfill}
 }
 
 \newglossaryentry{JBoss}{
-name=Blackbox,
+name=JBoss,
 description={\dotfill}
 }
 
 \newglossaryentry{Eclipse-Foundation}{
-name=Blackbox,
+name=Eclipse-Foundation,
 description={\dotfill}
 }
 
 \newglossaryentry{Git}{
-name=Blackbox,
+name=Git,
 description={\dotfill}
 }
 
 \newglossaryentry{Subversion}{
-name=Blackbox,
+name=Subversion,
 description={\dotfill}
 }
 
 \newglossaryentry{Mercurial}{
-name=Blackbox,
+name=Mercurial,
 description={\dotfill}
 }
 
