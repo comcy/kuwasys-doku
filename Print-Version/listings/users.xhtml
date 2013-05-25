@@ -1,0 +1,37 @@
+<t:dataTable id="data"
+	var="users"
+	sortable="true"
+	value="#{userBean.users}"
+	preserveDataModel="true">	
+    <t:column>
+	<f:facet name="header">
+	    <h:outputText value="ID" />
+	</f:facet>
+	<h:outputText value="#{users._id}" />
+    </t:column>
+    <t:column>
+	<f:facet name="header">
+	    <h:outputText value="Vorname" />
+	</f:facet>
+	<h:outputText value="#{users._vorname}" />
+    </t:column>
+    <t:column>
+	<f:facet name="header">
+	    <h:outputText value="Nachname" />
+	</f:facet>
+	<h:outputText value="#{users._nachname}" />
+    </t:column>
+...
+    <t:column>
+	<f:facet name="header">
+	    <h:outputText value="Username" />
+	</f:facet>
+	<h:outputText value="#{users._username}" />
+    </t:column> 
+    <t:column>
+	<f:facet name="header">
+	    <h:outputText value="Passwort" />
+	</f:facet>
+	<h:outputText value="#{users._passwort}" />
+    </t:column> 
+</t:dataTable>

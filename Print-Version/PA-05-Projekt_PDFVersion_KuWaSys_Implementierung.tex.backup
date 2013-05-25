@@ -267,8 +267,6 @@ Im Beispiel hier ist die Klasse \texttt{User} in der Klasse \texttt{userBean} in
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/User_UserBean.java}
 	
-
-	
 \subsubsection{Konflikte von Terminen}
 
 \subsubsection{Bearbeitung von Daten im System}
