@@ -1,0 +1,13 @@
+
+
+
+14 git clone git clone git clone ....
+26 Quellcodeausschnitt?
+28 diagramm zu weit unten
+44 diagramm doppelt
+51 Punkt2) ("(" fehlt)
+52 kopfnoten in gradalist?
+55 diagramm "Konfiguation" "r" fehlt
+56 "Konfiguation" "r" fehlt
+58,59,60 "Webiste der Schillerschule..."
+64 " java.util.ArrayList¡E¿"

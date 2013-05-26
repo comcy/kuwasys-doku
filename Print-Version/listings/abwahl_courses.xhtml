@@ -1,0 +1,14 @@
+<t:column rendered="#{kuwasys.userRole()=='Schüler'}">
+	<f:facet name="header">
+	</f:facet>
+	<h:commandLink value="Abwählen"
+		rendered="#{(course.courseGrade()==0) and (kuwasys.phase==2)}"
+		action="#{course.unAttendCourse}" />
+	<h:outputText value="Note: #{course.courseGrade()}"
+		rendered="#{course.courseGrade()!=0}" />
+</t:column>
+...
+	<h:outputLink value="gradeeditor.jsf" rendered="#{(kuwasys.userRole()=='Lehrer')}">
+		<f:param name="id" value="#{course._id}" />
+		<h:outputText value="Benoten" />
+	</h:outputLink>					

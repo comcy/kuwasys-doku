@@ -266,12 +266,108 @@ Im Beispiel hier ist die Klasse \texttt{User} in der Klasse \texttt{userBean} in
 	showstringspaces=true,
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/User_UserBean.java}
-	
+		
+\subsubsection{Kurswahl}
+Eine der wichtigsten Funktionen des Systems ist der Kurswahldialog für Schüler. Hier hat ein Schüler die volle Übersicht über die ihm zur Wahl stehenden Kurse im Tertial. Eine Übersicht der bereits gewählten Fächerverbünde und weitere Angeben über der Liste der gewählten Kurse zeigen dem Schüler ob seine Wahl ausreichend oder ggf. angepasst werden muss. 
+% Kurswahl
+\begin{figure}[h]
+ \begin{center}
+   \includegraphics[scale=0.7]{img/kurswahl_KuWaSys.png}
+ \end{center}
+ \caption[\textbf{KuWaSys: Kurswahldialog für einen Schüler}]{KuWaSys: Kurswahldialog für einen Schüler}
+ \label{fig:kurswahl_KuWaSys}
+\end{figure}
 
-	
-\subsubsection{Konflikte von Terminen}
+Auch die Wahl von sich terminlich überschneidenden Kursen wird überprüft und dem Schüler signalisiert. \\Bis ein solcher Konflikt gelöst ist, kann kein weiterer Kurs gewählt werden. 
+% Kurswahl_konflikt
+\begin{figure}[h]
+ \begin{center}
+   \includegraphics[scale=0.7]{img/kurswahl_konflikt_KuWaSys.png}
+ \end{center}
+ \caption[\textbf{KuWaSys: Kurswahldialog für einen Schüler bei Terminkonflikt}]{KuWaSys: Kurswahldialog für einen Schüler bei Terminkonflikt}
+ \label{fig:kurswahl_konflikt_KuWaSys}
+\end{figure}
 
-\subsubsection{Bearbeitung von Daten im System}
+Am Beispiel der Kurswahl soll nun exemplarisch der Weg von View zu Datenbank (oder umgekehrt) dargestellt werden.
+\\ Gewählte und wählbare Kurse werden, wie die oben beschriebenen User in einer Liste gerendert. In diesem Fall kommt jeweils eine Funktion hinzu um einen Kurs zu wählen bzw. abzuwählen. \\Da das Facelet zur Anzeige der Kurse für alle Benutzergruppen notwendig ist, wird beim Rendern abgefragt um welche Art Benutzer es sich handelt und die Seite entsprechend dargestellt.
+
+Um zwischen einem Kreuz und einem Haken für den Status der Wahl eines Fächerverbunds zu untescheiden findet der aus C bekannte ternäre Operator seine Anwendung. Liefert die in der \texttt{courseBean} implementierte Methode \texttt{bundleChosen(String bundle)} den Wert \texttt{true}, wird der Dateiname der Hakengrafik zum Rendern verwendet, andernfalls der der Kreuzgrafik.
+%% Listing: courses.xhtml
+	\lstinputlisting[label={lst:bundleChosen_courses.xhtml},
+	caption={Ausschnitt aus courses.xhtml},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/bundleChosen_courses.xhtml}
+Ähnlich wird bei der Terminkonfliktprüfung vorgegangen. Die ebenfalls in der der \texttt{courseBean} implementierte Methode \texttt{isDateConflicting()} liefert im Regelfall den Wert '0'. Wird ein Konflikt gefunden, gibt sie den Zeitpunkt als \texttt{String} zurück. Das überraschte Gesicht und der Hinweis, mit dem Rückgabewert werden angezeigt. 
+\\ Es ist wichtig, dass nicht einfach gegen die Zahl 0 verglichen wird, sondern gegen die Zeichenkette (einfache Anführungszeichen). Wie wir bei der Präsentation des Systems schmerzlich erfahren mussten, gehen verschiedene Versionen des \texttt{tomcat7} unterschiedlich mit dieser Problematik um. Während auf der im Eclipse eingerichteten Testumgebung die implizite Typenkonvertierung problemlos von statten ging, lieferte das produktive System einen Fehler bei der Typenumwandlung.
+%% Listing: courses.xhtml
+	\lstinputlisting[label={lst:konflikt_courses.xhtml},
+	caption={Ausschnitt aus courses.xhtml},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/konflikt_courses.xhtml}	
+	
+Mittels des \texttt{rendered} Attributes wird abgefragt ob ein Nutzer die Rolle Schüler oder Lehrer besitzt und die jeweilige Aktion zugelassen bzw., falls bereits eine Note gegeben wurde, diese angezeigt. 
+%% Listing: courses.xhtml
+	\lstinputlisting[label={lst:abwahl_courses.xhtml},
+	caption={Ausschnitt aus courses.xhtml},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/abwahl_courses.xhtml}
+Soll ein Kurs abgewählt werden, wird die Methode \texttt{unAttendCourse} aufgerufen. Dies kann ohne Paramter geschehen, da diese in der analog zur Klasse \texttt{User}, \texttt{Nested}  deklarierten Klasse \texttt{Course} implementiert wurde. Sie ist also Teil eines Kurs-Objekts und hat so direkt Zugriff auf dessen Attribute. 
+%% Listing: courses.xhtml
+	\lstinputlisting[label={lst:unAttend_CourseBean.java},
+	caption={Ausschnitt CourseBean.java},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/unAttend_CourseBean.java}
+Nachdem eine Instanz der Klasse \texttt{DatabaseHandler} erzeugt wurde, sind deren Methoden verfügbar. \texttt{removeFromGradeList(int userId, int kursId)} führt nun den eigentlichen Zugriff auf die Datebank aus.	
+%% Listing: courses.xhtml
+	\lstinputlisting[label={lst:removeGrade_DatabaseHandler.java},
+	caption={Ausschnitt DatabaseHandler.java},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/removeGrade_DatabaseHandler.java}	
 
 \subsection{Import und Export von Datensätzen}
 Laut Aufgabenstellung war vom System eine einfache und schnelle Möglichkeit verlangt, Datensätze importieren bzw. exportieren zu können.

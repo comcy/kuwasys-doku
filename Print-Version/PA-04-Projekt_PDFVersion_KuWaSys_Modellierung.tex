@@ -234,23 +234,8 @@ Allerdings gibt es noch weitere Eigenschaften die Kurse erfüllen können. Ein K
 Ferner müssen Kurse als Pflichtkurse signifiziert werden können.
 Aufgrund der Fülle an Informationen die verarbeitet werden müssen, war es in der Phase der Modellierung ebenfalls sehr wichtig die Datenstrukturen und deren Abhängigkeiten möglichst einfach zu halten, um in der späteren Implementierungsphase eine unkomplizierte Benutzerschnittstelle entwicklen zu können. 
 
-%%
-% Kurs - Fächerverbund
-\begin{figure}[h]
-\begin{center}
-
-\begin{tikzpicture}
-    \node[draw=black, fill=yellow!20!] at (-2.5,5) {Unterteilung des Schuljahrs};
-    \pie{33.3/Tertial 1, 33.3/Tertial 2, 33.3/Tertial 3}
-\end{tikzpicture}
-
-\end{center}
-\caption[\textbf{Einteilung des Schuljahrs}]{Einteilung des Schuljahrs}
-\label{fig:KursFaecherverbund}
-\end{figure}
-
 Außer den beiden vorgestellten Datenverarbeitungen existieren selbstverständlich noch weitere, die vor allem im Sinne der Übersichtlichkeit des System  zum Tragen kommen. 
-Dabei handelt es sich allerdings um Daten, die dynamisch während der Laufzeit erzeugt werden und deshalb ebenfalls in \prettyref{subsec:Systemrelevante Daten} genauer besprochen werden.
+Dabei handelt es sich allerdings um Daten, die dynamisch während der Laufzeit erzeugt werden.
 Im Gegensatz zu den dynamisch generierten Daten während der Laufzeit des Systems ist für alle anderen Daten zur Informationsverarbeitung eine Speicherung in einer Datenbank unabdingbar.
 Im folgenden Unterabschnitt soll deshalb näher auf die Modellierung und Umsetzung des verwendeten Informationssystems eingegangen werden.
 

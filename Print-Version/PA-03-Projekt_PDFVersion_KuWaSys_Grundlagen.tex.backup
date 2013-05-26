@@ -255,7 +255,7 @@ An dieser Stelle soll kurz gezeigt werden wie mit Git über die Konsole gearbeit
 Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
 
 \begin{enumerate}
-  \item das bereits existierende Verzeichnis mit dessen gesamten Inhalt wird 'geklont'. Danach können beliebige Veränderungen vorgenommen werden
+  \item das bereits existierende Verzeichnis mit dessen gesamten Inhalt wird 'gecloned'. Danach können beliebige Veränderungen vorgenommen werden
 
 	%% Listing: git clone
 	\lstinputlisting[label={lst:git_clone},
@@ -283,7 +283,7 @@ Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
 	label={lstmin:git_add},
 	captionpos=b,
 	belowcaptionskip=2pt,
-	caption={Git: git add},
+	caption={Git: git clone},
 	frame=tlbr, 
 	language=java, 
 	breaklines=true, 
@@ -302,7 +302,7 @@ Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
 	\lstinputlisting[label={lst:git_commit}, 
 	captionpos=b,
 	belowcaptionskip=2pt,
-	caption={Git: git commit},
+	caption={Git: git clone},
 	frame=tlbr, 
 	language=java, 
 	breaklines=true, 
@@ -323,7 +323,7 @@ Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
 	label={lstmin:git_push},
 	captionpos=b,
 	belowcaptionskip=2pt,
-	caption={Git: git push},
+	caption={Git: git clone},
 	frame=tlbr, 
 	language=java, 
 	breaklines=true, 
@@ -349,7 +349,7 @@ Ist bisher, noch kein Repository eingerichtet und ein neues soll erstellt werden
 	\lstinputlisting[label={lst:git_init}, 
 	captionpos=b,
 	belowcaptionskip=2pt,
-	caption={Git: git init},
+	caption={Git: git clone},
 	frame=tlbr, 
 	language=java, 
 	breaklines=true, 
@@ -372,7 +372,7 @@ Ist bisher, noch kein Repository eingerichtet und ein neues soll erstellt werden
 	\lstinputlisting[label={lst:git_remote_add}, 
 	captionpos=b,
 	belowcaptionskip=2pt,
-	caption={Git: git remote add},
+	caption={Git: git clone},
 	frame=tlbr, 
 	language=java, 
 	breaklines=true, 
@@ -694,7 +694,7 @@ Gleiches Prinzip funktioniert ebenfalls für eine Ausgabe am Bildschirm, bspw. �
 	backgroundcolor=\color{lightgrey}]{listings/TestFacelet_Eingabe.xhtml}
 
 Ein Ausdruck beginnt immer mit einem den Zeichen \texttt{\$} oder \texttt{\#}. Begrenzt wird der Ausdruck durch geschweifte Klammern. Der Unterschied des \texttt{\$}-Zeichens zum \texttt{\#}-Zeichen ist, dass mit ihm nur lesend auf ein Property zugegriffen werden kann.
-Der Ausdruck wird sofort evaluiert und ausgegeben. Er eignet sich daher für einfach Textausgaben.
+Der Ausdruck wird sofort evaluiert und ausgegeben. Er eignet sich daher für einfach Textausgaben. Ein Beispiel hierzu ist in \prettyref{lst:UserAdd2.xhtml} zu betrachten. 
 
 Diese Ausdrücke sind Teil der \ac{UEL}, also eine Art von vordefinierten Facelet-Tags, mit deren Hilfe auf alle Properties einer Managed-Bean zugegriffen werden kann. 
 	
