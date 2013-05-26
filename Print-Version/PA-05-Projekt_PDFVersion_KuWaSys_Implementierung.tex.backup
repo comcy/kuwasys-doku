@@ -323,7 +323,7 @@ Um zwischen einem Kreuz und einem Haken für den Status der Wahl eines Fächerve
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/konflikt_courses.xhtml}	
 	
-Mittels des \texttt{rendered} Attributes wird abgefragt ob ein Nutzer die Rolle Schüler oder Lehrer besitzt und die jeweilige Aktion zugelassen bzw., falls bereits eine Note gegeben wurde, diese angezeigt. Soll ein Kurs abgewählt werden, wird die Methode \texttt{unAttendCourse} aufgerufen. Dies kann ohne Paramter geschehen, da diese in der analog zur Klasse \texttt{User}, \texttt{Nested}  deklarierten Klasse \texttt{Course} implementiert wurde. Sie ist also Teil eines Kurs-Objekts und hat so direkt Zugriff auf dessen Attribute.
+Mittels des \texttt{rendered} Attributes wird abgefragt ob ein Nutzer die Rolle Schüler oder Lehrer besitzt und die jeweilige Aktion zugelassen bzw., falls bereits eine Note gegeben wurde, diese angezeigt. 
 %% Listing: courses.xhtml
 	\lstinputlisting[label={lst:abwahl_courses.xhtml},
 	caption={Ausschnitt aus courses.xhtml},
@@ -338,7 +338,7 @@ Mittels des \texttt{rendered} Attributes wird abgefragt ob ein Nutzer die Rolle 
 	showstringspaces=true,
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/abwahl_courses.xhtml}
-
+Soll ein Kurs abgewählt werden, wird die Methode \texttt{unAttendCourse} aufgerufen. Dies kann ohne Paramter geschehen, da diese in der analog zur Klasse \texttt{User}, \texttt{Nested}  deklarierten Klasse \texttt{Course} implementiert wurde. Sie ist also Teil eines Kurs-Objekts und hat so direkt Zugriff auf dessen Attribute. 
 %% Listing: courses.xhtml
 	\lstinputlisting[label={lst:unAttend_CourseBean.java},
 	caption={Ausschnitt CourseBean.java},
@@ -353,10 +353,21 @@ Mittels des \texttt{rendered} Attributes wird abgefragt ob ein Nutzer die Rolle 
 	showstringspaces=true,
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/unAttend_CourseBean.java}
-	
-	
-
-\subsubsection{Bearbeitung von Daten im System}
+Nachdem eine Instanz der Klasse \texttt{DatabaseHandler} erzeugt wurde, sind deren Methoden verfügbar. \texttt{removeFromGradeList(int userId, int kursId)} führt nun den eigentlichen Zugriff auf die Datebank aus.	
+%% Listing: courses.xhtml
+	\lstinputlisting[label={lst:removeGrade_DatabaseHandler.java},
+	caption={Ausschnitt DatabaseHandler.java},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	backgroundcolor=\color{lightgrey}]{listings/removeGrade_DatabaseHandler.java}	
 
 \subsection{Import und Export von Datensätzen}
 Laut Aufgabenstellung war vom System eine einfache und schnelle Möglichkeit verlangt, Datensätze importieren bzw. exportieren zu können.

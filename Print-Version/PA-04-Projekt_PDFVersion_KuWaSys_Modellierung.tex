@@ -437,7 +437,7 @@ Prinzipiell kann man mit der Transformation, wie folgt vorgehen (\cite{VossenG-D
 Die Beschreibung $1:1$- bzw $1:N$-Beziehung bedeutet in diesem Fall allerdings nicht wie zuvor, ein Minimum auf der linken und das Maximum auf der rechten Seite. 
 Hierbei werden nur noch die maximalen Werte der beiden Multiplizitätsangaben berücksichtigt. Dies gilt analog für alle Angaben der Multiplizitäten.
 
-Sollte bei der Transformation $Punkt$ $2)$ eine Rolle spielen, müssen Attribute in bereits bestehende Relationsschemata aufgenommen werden. Folgende Regeln treten dann in Kraft:
+Sollte bei der Transformation $(Punkt$ $2)$ eine Rolle spielen, müssen Attribute in bereits bestehende Relationsschemata aufgenommen werden. Folgende Regeln treten dann in Kraft:
 \begin{enumerate}
  \item Zweistellige $1:1$-Beziehung
  \begin{itemize}
@@ -599,7 +599,7 @@ Diese beinhaltet eine virtuelle Infrastruktur \gls{VMWare} ESXi auf der ein \ac{
        node[midway,below] {} (Suse);
   \draw[to, dashed, color=black!50!white] (SLES) -- node[midway,right=0.2cm] {Konfiguration}
        node[midway,below] {} (router);
-  \draw[to, dashed, color=black!50!white] (SLES) -- node[midway,right=0.2cm] {Konfiguation}
+  \draw[to, dashed, color=black!50!white] (SLES) -- node[midway,right=0.2cm] {Konfiguration}
        node[midway,below] {} (Ubuntu);
 
   % Router - WWW
@@ -618,7 +618,7 @@ Prinzipiell wäre eine Verwendung dieser virtuellen \gls{Appliance} zum Hosting 
 
 \textbf{Integration in die Infrastruktur:}
 
-Ein PostreSQL-Server dient zur Datenhaltung und ein Apache Tomcat 7 zur Auslieferung der \ac{Webapp}. Nach Konfiguation (und überfälligem reboot) der Astaro Firewall im Keller der Schule ist die Webapp jetzt über das Intranet an allen Rechnern im Schulnetz erreichbar (\url{http://192.168.1.222:8080/kuwasys20}). Die Erreichbarkeit über das Internet ist seit der Freischaltung der entsprechenden Ports auf den BelWü-Server und umgekehrt gegeben (\url{http://141.10.50.250:8080/kuwasys20}).
+Ein PostreSQL-Server dient zur Datenhaltung und ein Apache Tomcat 7 zur Auslieferung der \ac{Webapp}. Nach Konfiguration (und überfälligem reboot) der Astaro Firewall im Keller der Schule ist die Webapp jetzt über das Intranet an allen Rechnern im Schulnetz erreichbar (\url{http://192.168.1.222:8080/kuwasys20}). Die Erreichbarkeit über das Internet ist seit der Freischaltung der entsprechenden Ports auf den BelWü-Server und umgekehrt gegeben (\url{http://141.10.50.250:8080/kuwasys20}).
 Diese Adressen werden auf der Homepage der Schillerschule und im Intranet verlinkt, sodass keine weitere Maskierung wie Subdomains oder lokale DNS-Einträge notwendig ist.
 Die Admnistration des Ubuntu Servers kann im Intranet von einer VMWare Management Console aus erfolgen, für schnelles Eingreifen wurde ein SSH Zugang eingerichtet, der im Internet erreichbar ist.
 
