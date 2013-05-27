@@ -1,5 +1,5 @@
 /**
-  * Exportfunktion einer CSV-Datei für die gesamte Schuelerliste
+  * Exportfunktion einer CSV-Datei fuer die gesamte Schuelerliste
   * 
   * @return Facelet "users"
   */

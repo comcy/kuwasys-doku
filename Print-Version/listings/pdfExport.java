@@ -7,10 +7,7 @@
 */
 public String pdfDownloadClass() throws IOException {
 
-  String filename = "Klassen_Passwortliste_"
-  + dbh.showUserClass(dbh.getUserId()) + ".pdf";
-
-  try {
+...
 
     FacesContext fc = FacesContext.getCurrentInstance();
     ExternalContext ec = fc.getExternalContext();
@@ -28,24 +25,10 @@ public String pdfDownloadClass() throws IOException {
     "attachment; filename=\"" + filename + "\"");
 
     Document doc = new Document();
-
     PdfWriter.getInstance(doc, os);
 
-    // Schriftarten definieren
-    // Helvetica, fett
-    Font font1 = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
-    // Courier kursiv
-    Font font2 = new Font(Font.FontFamily.COURIER, 16);
-    // Roman, normal
-    Font font3 = new Font(Font.FontFamily.TIMES_ROMAN, 12);
-    // Roman, fett
-    Font font4 = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-
-    String relativeWebPath = "/resources/img/header.jpg";
-    ServletContext servletContext = (ServletContext) ec.getContext();
-    String absoluteDiskPath = servletContext
-    .getRealPath(relativeWebPath);
-
+    ...
+    
     Image headerImage = Image.getInstance(absoluteDiskPath);
     headerImage.scaleToFit(500, 150);
 
@@ -68,48 +51,27 @@ public String pdfDownloadClass() throws IOException {
     doc.add(new Paragraph(dbh.showUserFullName(dbh.getUserId()), font2));
 
     PdfPCell cellVName = new PdfPCell(new Paragraph("Vorname", font4));
-    PdfPCell cellNName = new PdfPCell(new Paragraph("Nachname", font4));
-    PdfPCell cellUsername = new PdfPCell(new Paragraph("Username",
-    font4));
-    PdfPCell cellPasswort = new PdfPCell(new Paragraph("Passwort",
-    font4));
+    ...
 
     tableHead.addCell(cellVName);
-    tableHead.addCell(cellNName);
-    tableHead.addCell(cellUsername);
-    tableHead.addCell(cellPasswort);
+    ...
 
     doc.add(tableHead);
 
     for (User user : users) {
 
-    PdfPCell cellVNameDyn = new PdfPCell(new Paragraph(
-    user.get_vorname(), font3));
-    PdfPCell cellNNameDyn = new PdfPCell(new Paragraph(
-    user.get_nachname(), font3));
-    PdfPCell cellUsernameDyn = new PdfPCell(new Paragraph(
-    user.get_username(), font3));
-    PdfPCell cellPasswortDyn = new PdfPCell(new Paragraph(
-    user.get_passwort(), font3));
-
-    tableCont.addCell(cellVNameDyn);
-    tableCont.addCell(cellNNameDyn);
-    tableCont.addCell(cellUsernameDyn);
-    tableCont.addCell(cellPasswortDyn);
+      PdfPCell cellVNameDyn = new PdfPCell(new Paragraph(
+      user.get_vorname(), font3));
+      ...
+      tableCont.addCell(cellVNameDyn);
+      ...
     }
+    
     doc.add(tableCont);
-
     doc.close();
-
     os.flush();
     os.close();
-
     fc.responseComplete();
-    
-  } catch (DocumentException de) {
-      System.out.println("Error during PDF creation: " + de);
-  } catch (IOException ioe) {
-      System.out.println("Error during PDF creation: " + ioe);
-  }
-  return "users";
+...
+
 }
