@@ -11,22 +11,22 @@
 
 		<h:graphicImage library="img" name="Actions-dialog-ok-apply-icon.png"
 			width="25px" alt="gut"
-			rendered="#{(kuwasys.userRole()=='Schüler') and courseBean.courses.size()==6}" />
+			rendered="#{(kuwasys.userRole()=='Schueler') and courseBean.courses.size()==6}" />
 		<h:outputText
 			value="Du hast bereits #{courseBean.courses.size()} von 6 Kursen gewählt."
-			rendered="#{kuwasys.userRole()=='Schüler'}"></h:outputText>
+			rendered="#{kuwasys.userRole()=='Schueler'}"></h:outputText>
 
 		<h:graphicImage library="img" name="Emotes-face-surprise-icon.png"
 			alt="oh"
-			rendered="#{(kuwasys.userRole()=='Schüler') and (courseBean.isDateConflicting()!='0')}" />
+			rendered="#{(kuwasys.userRole()=='Schueler') and (courseBean.isDateConflicting()!='0')}" />
 		<h:outputText
 			value="ACHTUNG! Terminüberschneidung am  #{courseBean.isDateConflicting()}"
 			style="font-weight:bold;color:red; font-size:40px;"
-			rendered="#{(kuwasys.userRole()=='Schüler') and (courseBean.isDateConflicting()!='0')}" />
+			rendered="#{(kuwasys.userRole()=='Schueler') and (courseBean.isDateConflicting()!='0')}" />
 
 
 		<h:outputText
-			value="Aktivierte Kurse bieten rechnerisch Platz für #{kuwasys.countPositions()} Schüler. (Terminüberschneidungen nicht einberechnet!)"
+			value="Aktivierte Kurse bieten rechnerisch Platz für #{kuwasys.countPositions()} Schueler. (Terminüberschneidungen nicht einberechnet!)"
 			rendered="#{kuwasys.userRole()=='Admin'}">
 			<br />
 		</h:outputText>
@@ -34,7 +34,7 @@
 			value="Aktivierte Pflichtkurse: #{kuwasys.countEssential()}"
 			rendered="#{kuwasys.userRole()=='Admin'}" />
 
-		<h:panelGrid columns="6" rendered="#{kuwasys.userRole()=='Schüler'}"
+		<h:panelGrid columns="6" rendered="#{kuwasys.userRole()=='Schueler'}"
 			width="100%" style="font-weight:bold;">
 			<h:outputText value="WZG:" />
 			<h:outputText value="MNT:" />
@@ -128,14 +128,14 @@
 						rendered="#{(course._pflichtkurs?true:false) and (course.currentTertial)}"
 						action="#{course.toggleEssentialCourse()}" />
 				</t:column>
-				<t:column rendered="#{(kuwasys.userRole()!='Schüler')}">
+				<t:column rendered="#{(kuwasys.userRole()!='Schueler')}">
 					<f:facet name="header">
 						<h:outputText value="Teilnehmer" />
 					</f:facet>
 					<h:outputText
 						value="#{course._teilnehmerzahlAktuell}/#{course._teilnehmerzahl}" />
 				</t:column>
-				<t:column rendered="#{kuwasys.userRole()=='Schüler'}">
+				<t:column rendered="#{kuwasys.userRole()=='Schueler'}">
 					<f:facet name="header">
 					</f:facet>
 					<h:commandLink value="Abwählen"
@@ -144,7 +144,7 @@
 					<h:outputText value="Note: #{course.courseGrade()}"
 						rendered="#{course.courseGrade()!=0}" />
 				</t:column>
-				<t:column rendered="#{(kuwasys.userRole()!='Schüler')}">
+				<t:column rendered="#{(kuwasys.userRole()!='Schueler')}">
 					<h:outputLink value="courseditor.jsf">
 						<f:param name="id" value="#{course._id}" />
 						<f:param name="name" value="#{course._name}" />
@@ -161,12 +161,12 @@
 				</t:column>
 			</t:dataTable>
 			<h:commandLink value="Einen Kurs wählen"
-				rendered="#{(kuwasys.userRole()=='Schüler') and (courseBean.isDateConflicting()=='0') and (kuwasys.phase==2)}"
+				rendered="#{(kuwasys.userRole()=='Schueler') and (courseBean.isDateConflicting()=='0') and (kuwasys.phase==2)}"
 				action="#{kuwasys.goAddGradelist()}" />
 		</h:form>
-		<h3><h:outputText rendered="#{(kuwasys.userRole()=='Schüler')}" value="Funktionen:"/></h3>
+		<h3><h:outputText rendered="#{(kuwasys.userRole()=='Schueler')}" value="Funktionen:"/></h3>
 		<h:form>
-			<h:commandButton value="aktuellen Kursplan als PDF-Datei herunterladen"	action="#{exportBean.pdfDownloadCoursesTimetableStudent}"  rendered="#{(kuwasys.userRole()=='Schüler')}" />
+			<h:commandButton value="aktuellen Kursplan als PDF-Datei herunterladen"	action="#{exportBean.pdfDownloadCoursesTimetableStudent}"  rendered="#{(kuwasys.userRole()=='Schueler')}" />
 		</h:form>
 		<h3><h:outputText rendered="#{(kuwasys.userRole()=='Admin')}" value="Funktionen:"/></h3>
 		<h:form>

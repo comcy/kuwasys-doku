@@ -213,7 +213,7 @@ description={Datenbankmanagementsoftware, in der momentan aktuellste Version 1.1
 
 \newglossaryentry{C/C++}{
 name=C/C++,
-description={Programmiersprachen, die sogenannte Hochsprachen repräsentiere\ndotfill}
+description={Programmiersprachen, die sogenannte Hochsprachen repräsentieren\dotfill}
 }
 
 \newglossaryentry{.Net}{

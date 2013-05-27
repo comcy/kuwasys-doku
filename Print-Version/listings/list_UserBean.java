@@ -1,7 +1,7 @@
 package de.schillerschule.kuwasys20.User;
 ...
 /**
- * Klasse für User-Handling im System
+ * Klasse fuer User-Handling im System
  * 
  * @author cy
  * 
@@ -41,7 +41,7 @@ public class UserBean implements Serializable {
 	}
 ...
 	/**
-	 * Username des aktuellen Users zurückgeben
+	 * Username des aktuellen Users zurueckgeben
 	 * 
 	 * @return username
 	 */

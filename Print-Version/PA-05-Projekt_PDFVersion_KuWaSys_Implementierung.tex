@@ -509,37 +509,112 @@ Weiter ist es ausreichend zu wissen wann die CSV-Datei endet und schlussendlich 
 
 \subsubsection{Festlegen von Usernamen}
 
+Die Generierung von Usernamen wird einheintlich vom System beim Hinzufügen eines neuen Benutzers gewährleistet.
+Ein Usernamen besteht immer aus einer Zeichenkette die wie folgt aufgebaut ist:
+
+\[
+\begin{split}
+  \text{Username} =\quad & 3\quad \text{Buchstaben des Nachnamens}\\ 
+  +\quad & 2 \quad \text{Buchstaben des Vornamens}\\ 
+  +\quad & \text{laufende Nummer}
+\end{split}
+\]
+
+So wird beim Anlegen des Users 'Christian Silfang' im System:
+
+\[
+\begin{split}
+  \text{SilCh1} &= \quad \text{Sil} \quad (3 \quad \text{Buchstaben des Nachnamens})\\ 
+		&+ \quad \text{Ch} \quad (2 \quad \text{Buchstaben des Vornamens})\\ 
+		&+ \quad 1 \quad (\text{laufende Nummer})
+\end{split}
+\]
+
+Im Programmcode wird diese Umwandlung durch herkömmliche \texttt{substring-Methoden} realisiert.
+Im nachstehenden \prettyref{lstmin:username} ist dieser Schritt dargestellt. Die Besonderheit bei dieser Funktionalität ist die automatische und fortlaufende Generierung der User-Ziffer. So wird gewährleistet, dass ein Username im System eindeutig ist. Letztendlich steckt dahinter eine Datenbankabfrage, die auf eventuell bestehende Usernamen prüft.
+Falls ein Username nun im System vorhanden ist, wird die Nummer erhöht und der Vorgang wird erneut von vorne gestartet. Tritt der Fall ein, dass ein Username im System nicht vorhanden ist, so wird der eben generierte Username für den dazugehörigen User gespeichert. Der Umschaltmechanismus wird dabei durch eine Boolsche Variable \texttt{isCurrentUsername} (Zeile 9) gesteuert.
+
+%% Listing: Username generiert
+	\lstinputlisting[label={lstmin:username},
+	caption={CSV-Datei Parser-Methode},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	tabsize=2,
+	backgroundcolor=\color{lightgrey}]{listings/usernames_generate.java}
+
+
 \subsubsection{Generierung von Passwörtern}
 
+Das Generieren von Passwörtern ist sehr simpel umgesetzt. Hierzu wurden einfach Zufallszahlen- und Ziffernfolgen generiert:
+
+%% Listing: CSV Schüler - Parser
+	\lstinputlisting[label={lstmin:pwd},
+	caption={CSV-Datei Parser-Methode},
+	frame=tlbr, 
+	language=java, 
+	breaklines=true, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=5pt, 
+	basicstyle=\small\ttfamily,
+	showstringspaces=true,
+	keywordstyle=\bfseries\color{lila}, 
+	tabsize=2,
+	backgroundcolor=\color{lightgrey}]{listings/passwort_generate.java}
+	
+Die Sicherheit der Passwörter ist durchaus gegeben.
+Die momentanen Passwörter, haben eine Länge von 7. Ursprünglich hatten wir 16 zeichen implementiert. Aber nach Absprache mit der Schule, wurden diese gekürzt.
 
 \subsection{Kursverwaltung}
 
 Neben dem Anlegen von neuen Benutzern, muss das System auch die Funktionalität besitzen, neue Kurse hinzuzufügen.
+Die Schillerschule arbeitet mit sogenannten Fächerverbünden. Fächerverbünde fassen einzelne Kurse in Thematik und Kompetenz zusammen.
+Die Fächerverbünde im einzelnen sind:
 
-Darstellung des Stundenplans:
+\begin{itemize}
+  \item \ac{MSG}
+
+  \item \ac{WAG}
+  
+  \item \ac{MNT}
+  
+  \item \ac{WZG}
+\end{itemize}
+
+Gesondert behandelt werden lediglich Religionskurse. Diese werden keinem Verbund zugeordnet sondern sind selbstständig.
+Kurse können generell an jedem Wochentag stattfinden. Ein Kurs wird allerdings nur einmal wöchentlich, entweder vormittags oder nachmittags, angeboten.
+Genrell ist es auch nur möglich einen Kurs vormittags oder nachmittags zu besuchen, nicht zwei oder mehrere.
+Eine Darstellung des Stundenplans einer Kurswahl, ohne Kernfächer, könnte der folgende sein:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[x=\daywidth, y=-1cm, node distance=0 cm,outer sep = 0pt]
 % Style for Days
 \tikzstyle{day}=[draw, rectangle,  minimum height=1cm, minimum width=\daywidth, fill=yellow!20,anchor=south west]
 % Style for hours
-\tikzstyle{hour}=[draw, rectangle, minimum height=1 cm, minimum width=1.5 cm, fill=yellow!30,anchor=north east]
+\tikzstyle{hour}=[draw, rectangle, minimum height=2cm, minimum width=\daywidth, fill=yellow!30,anchor=north east]
 
 % Styles for events
 % Dauer Stunden
 \tikzstyle{hours}=[rectangle,draw, minimum width=\daywidth, anchor=north west,text centered,text width=5 em]
-\tikzstyle{1hour}=[hours,minimum height=1cm]
-\tikzstyle{2hours}=[hours,minimum height=2cm]
-\tikzstyle{3hours}=[hours,minimum height=3cm]
+\tikzstyle{1hour}=[hours,minimum height=2cm, minimum width=\daywidth, anchor=north west,text centered,text width=5 em]
 
 % Style der Fächer
-\tikzstyle{Kern}=[2hours,fill=green!20]
-\tikzstyle{Kurs1}=[2hours,fill=red!20]
-\tikzstyle{Kurs2}=[2hours,fill=blue!20]
-\tikzstyle{Kurs3}=[2hours,fill=blue!10]
-\tikzstyle{Kurs4}=[2hours, pattern=north east lines, pattern color=magenta]
-\tikzstyle{Kurs5}=[3hours, pattern=north west lines, pattern color=magenta!60!white]s
-\tikzstyle{Planche}=[1hour,fill=white]
+\tikzstyle{Kurs1}=[1hour,fill=red!20]
+\tikzstyle{Kurs2}=[1hour,fill=blue!20]
+\tikzstyle{Kurs3}=[1hour,fill=blue!10]
+\tikzstyle{Kurs4}=[1hour, pattern=north east lines, pattern color=magenta]
+\tikzstyle{Kurs5}=[1hour, pattern=north west lines, pattern color=magenta!60!white]s
+\tikzstyle{Kurs6}=[1hour, fill=green!10]
+\tikzstyle{Pause}=[1hour, fill=yellow!10]
 
 % Positioning Tag/Stunden
 \node[day] (mo) at (1,8) {Montag};
@@ -548,43 +623,29 @@ Darstellung des Stundenplans:
 \node[day] (do) [right = of mi] {Donnerstag};
 \node[day] (fr) [right = of do] {Freitag};
 
-\node[hour] (8-9) at (1,8) {8-9};
-\node[hour] (9-10) [below = of 8-9] {9-10};
-\node[hour] (10-11) [below= of 9-10] {10-11};
-\node[hour] (11-12) [below = of 10-11] {11-12};
-\node[hour] (12-13) [below  = of 11-12] {12-13};
-\node[hour] (13-14) [below = of 12-13] {13-14};
-\node[hour] (14-15) [below = of 13-14] {14-15};
-\node[hour] (15-16) [below = of 14-15] {15-16};
-\node[hour] (16-17) [below = of 15-16] {16-17};
-\node[hour] (17-18) [below = of 16-17] {17-18};
-\node[hour] (18-19) [below = of 17-18] {18-19};
+\node[hour] (Vormittag) at (1,8) {Vormittag};
+\node[hour] (Pause) [below = of Vormittag] {Pause};
+\node[hour] (Nachmittag) [below= of Pause] {Nachmittag};
 
 % Position Fächer
-\node[Kurs1] at (1,10) {Sport};
-\node[Kern] at (1,8) {D/M/E};
-\node[Kern] at (2,8) {Physique};
-\node[Kern] at (4,8) {Physique};
-\node[Kern] at (5,10) {Physique};
-\node[Kern] at (2,10) {Maths};
-\node[Kern] at (2,14) {Maths};
-\node[Kern] at (3,8) {Maths};
-\node[Kern] at (4,10) {Maths};
-\node[Kern] at (5,8) {Maths};
-\node[Kern] at (1,14) {TIPE};
-\node[Kern] at (1,16) {TIPE};
-\node[Kern] at (2,16) {TIPE};
-\node[Kern] at (3,10) {TIPE};
-\node[Kern] at (5,14) {TIPE};
-\node[Kern] at (5,16) {TIPE};
-\node[Kern] at (3,14) {Phys ou SI};
-\node[Kern] at (3,16) {SI ou Phys};
-\node[Kern] at (1,13) {Planche};
-\node[Kern] at (1,18) {Colle};
-\node[Kern] at (4,13.5) {Planche};
+\node[Kurs1] at (1,8) {MSG};
+\node[Kurs3] at (2,8) {Sport};
+\node[Kurs2] at (3,8) {WZG};
+\node[Kurs3] at (5,8) {Sport};
+\node[Kurs6] at (4,8) {WAG};
+\node[Kurs5] at (1,12) {Reli};
+\node[Kurs5] at (2,12) {Reli};
+\node[Kurs4] at (3,12) {MNT};
+\node[Kurs1] at (4,12) {MSG};
+\node[Kurs2] at (5,12) {WZG};
+\node[Pause] at (1,10) {};
+\node[Pause] at (2,10) {};
+\node[Pause] at (3,10) {};
+\node[Pause] at (4,10) {};
+\node[Pause] at (5,10) {};
 
 \end{tikzpicture}
-\caption[\textbf{Netzwerkstruktur der Schillerschule Aalen}]{Netzwerkstruktur der Schillerschule Aalen}
+\caption[\textbf{Kursplan der Schillerschule}]{Kursplan der Schillerschule}
 \label{fig:Stundenplan}
 \end{figure}
 
@@ -612,7 +673,8 @@ Das anlegen des Sportkurs-Flags in der DB ist trivial und wird daher nicht weite
 
 Von einer Besonderheit bei Sportkursen kann gesprochen werden wenn zusätzlich die Fächerverbünde und Pflichtkurse mitbetrachtet werden.
 Für gewöhnlich wird ein Sportkurs dem Fächerverbund \ac{MSG} zugeordnet. Es kann allerdings vorkommen, dass ein Kurs als Sportkurs angelegt wird, aber keinen Pflichtkurs darstellt.  
-Pflichtkurse werden am Ende dieses Abschnitts noch behandelt.
+Wichtig ist zu beachten das unabhängig vom Fächerverbund eine gewisse Anzahl an Sportkursen besucht werden muss. Ein Schüler kann also gleichzeitig Sportkurse und den Fächerverbund \ac{MSG} abdecken. Eventuell deckt er hierbei noch zusätzlich einen Pflichtkurs ab oder nicht.
+Die gleiche Betrachtungsweise gilt auch für Religionskurse. Allerdings weiß man bereits, dass Religionskurse eigenständige Fächerverbünde darstellen.
 
 Beim Anlegen hat der Lehrer oder der Admin die Möglichkeit dieses Attribut des zu erstellenden Kurses zu setzen, wie es die grüne Markierung in \prettyref{fig:KursAnlegen_KuWaSys} zeigt.
 
