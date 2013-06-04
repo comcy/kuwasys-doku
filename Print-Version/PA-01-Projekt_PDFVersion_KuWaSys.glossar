@@ -78,7 +78,7 @@ parent=JAVA
 
 \newglossaryentry{Apache Maven}{
 name=Apache Maven,
-description={ist ein sogenanntes 'Build-Management-Tool' der Apache Software Foundation. Es basiert auf Java. Mit ihm können insbesondere Java-Programme standardisiert erstellt und verwaltet werden\dotfill}
+description={ist ein sogenanntes 'Build-Management-Tool' der Apache Software Foundation. Es basiert auf Java. Mit ihm können insbesondere Java-Programme standardisiert erstellt und verwaltet werden\dotfill},
 parent=Apache Software Foundation
 }
 
@@ -140,7 +140,7 @@ description={ist der Ansatz zum Design eines kombinierten Systems aus Computerha
 
 \newglossaryentry{DMZ}{
 name=DMZ,
-description={(=ent- oder demilitarisierte Zone) ist die Bezeichnung für ein Computernetzwerk mit einem Sicherheitskonzept für die Zugriffskontrolle auf daran befindliche Server. Im wesentlichen wird dies über eine Firewall realisiert\dotfill}
+description={(=ent- oder demilitarisierte Zone) ist die Bezeichnung für ein Computernetzwerk mit einem Sicherheitskonzept für die Zugriffskontrolle auf daran befindliche Server. Im Wesentlichen wird dies über eine Firewall realisiert\dotfill}
 }
 
 \newglossaryentry{VMWare}{
@@ -271,7 +271,7 @@ parent=JAVA
 
 \newglossaryentry{Whitebox}{
 name=Whitebox,
-description={ist eine Methode der Softwaretests bei denen der Entwickler Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Blackbox)\dotfill}
+description={ist eine Methode der Softwaretests, bei denen der Entwickler Kenntnisse über die innere Funktionsweise des Systems hat (Antonym: Blackbox)\dotfill}
 }
 
 \newglossaryentry{Blackbox}{
@@ -286,7 +286,7 @@ description={ist ein zu Red Hat gehörendes Unternehmen und einer der Vorreiter 
 
 \newglossaryentry{Eclipse-Foundation}{
 name=Eclipse-Foundation,
-description={ist eine nicht kommerzielle Gesellschaft die sich der Open-Source Weiterentwicklung von Eclipse-Projekten verschrieben hat\dotfill}
+description={ist eine nicht kommerzielle Gesellschaft, die sich der Open-Source Weiterentwicklung von Eclipse-Projekten verschrieben hat\dotfill}
 }
 
 \newglossaryentry{Git}{

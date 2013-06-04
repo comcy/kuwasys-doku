@@ -1,18 +1,18 @@
 \section{Grundlagen}\label{sec:Grundlagen}
 
-Wie schon zu Beginn erwähnt, sollen in diesem Abschnitt der Ausarbeitung die Grundlagen der von uns verwendeten Technologien und Konzepte angesprochen und näher erläutert werden. Zu Beginn werden die eingesetzten Werkzeuge und Konfiguration der Entwicklungsumgebung besprochen. Anschließend sollen grundlegende Kenntnisse der Webentwicklung mit \ac{JSF} und PostgreSQL vermittelt werden.
+Wie schon zu Beginn erwähnt, sollen in diesem Abschnitt der Ausarbeitung die Grundlagen der von uns verwendeten Technologien und Konzepte angesprochen und näher erläutert werden. Zu Beginn werden die eingesetzten Werkzeuge und die Konfiguration der Entwicklungsumgebung besprochen. Anschließend sollen grundlegende Kenntnisse der Webentwicklung mit \ac{JSF} und PostgreSQL vermittelt werden.
 
-\subsection{Eclipse und Enwticklungsunterstützung}
+\subsection{Eclipse und Entwicklungsunterstützung}
 Umfangreiche Softwareprojekte lassen sich durch die Verwendung einer \gls{Integrated Development Environment} (IDE) wie \gls{Eclipse} oder \gls{NetBeans} besser bearbeiten. 
-Eclipse wurde ursprünglich von IBM entwickelt und im Jahr 2001 quelloffen veröffentlicht. Im Jahre 2004 übernahm die \gls{Eclipse-Foundation} die Weiterentwicklung des Projekts und ist heute neben der gls{Apache Software Foundation} eines der größten Open-Source-Communities im Bereich der JAVA-Softwareentwicklung.
+Eclipse wurde ursprünglich von IBM entwickelt und im Jahr 2001 quelloffen veröffentlicht. Im Jahre 2004 übernahm die \gls{Eclipse-Foundation} die Weiterentwicklung des Projekts und ist heute neben der \gls{Apache Software Foundation} eines der größten Open-Source-Communities im Bereich der JAVA-Softwareentwicklung.
 Seit dem Jahr 2006 wurden verschiedene Versionen und Unter-Projekte von Eclipse auf einen gemeinsamen und aktuellen Stand gebracht.
 Nach vielen Jahren der Entwicklung und stetigen Verbesserungen ist Eclipse heutzutage eines der beliebtesten IDEs im Bereich der Anwendungsentwicklung.
-Heute ist Eclipse weit entfernt davon eine IDE nur für JAVA zu sein. Diverse Erweiterungen machten es zum dem Entwicklungstool für Software jedglicher Art und beinahe jeglicher Programmiersprache, schlechthin.
+Heute ist Eclipse weit davon entfernt, eine IDE nur für JAVA zu sein. Diverse Erweiterungen machten es zu dem Entwicklungstool für Software jeglicher Art und beinahe jeglicher Programmiersprache schlechthin.
 
-Für die Entwicklung des Projekts selbst wurde Eclipse, Version 4.2 (Juno) verwendet.
-Außer den Basisfunktionen stehen Entwicklern viele Möglichkeiten offen diverse Plug-ins und Tools in Eclipse zu integrieren, die die Arbeit erleichtern.
+Für die Entwicklung der Projektarbeit selbst, wurde Eclipse Version 4.2 (Juno) verwendet.
+Außer den Basisfunktionen stehen Entwicklern viele Möglichkeiten offen, diverse Plug-ins und Tools in Eclipse zu integrieren, die die Arbeit erleichtern.
 
-Die für dieses Projekt verwendeten Softwareunterstützungen, waren:
+Die für dieses Projekt verwendeten Softwareunterstützungen waren:
 \begin{itemize}
 	\item \gls{Apache Maven}
 	\item Eclipse \ac{WTP}
@@ -25,22 +25,22 @@ Eine weiteres Tool, die \gls{JBoss}-Tools, welche auch eine Erweiterung der Entw
 
 Zur Automatisierung einzelner Schritte in der Softwareentwicklung wurde das Build- und Management-Tool Apache Maven zur Umsetzung verwendet. 
 
-Desweiteren kam die freie Software zu Versionsverwaltung \gls{Git} zum Einsatz. Software dieser Art bietet sich vorallem bei kollaborativen Projekten, also Projekten mit mehreren Entwicklern an. 
+Desweiteren kam die freie Software zur Versionsverwaltung \gls{Git} zum Einsatz. Software dieser Art bietet sich vorallem bei kollaborativen Projekten, also Projekten mit mehreren Entwicklern, an. 
 Aber auch der Vorteil der Versionskontrolle bei kleinen 'Ein-Mann-Projekten' soll besser nicht unterschätzt werden.
 
 Da es sich hier um selbstständige Tools handelt, die nicht zwingend in einer IDE integriert sein müssen, werden diese jeweils in einem eigenen Unterabschnitt genauer erklärt.
-Im folgenden soll zuerst auf Maven eingegangen werden.
+Im Folgenden soll zuerst auf Maven eingegangen werden.
 
 \subsection{Apache Maven}
 
-Der sinnvollste Weg ein \ac{JSF} Projekt zu verwalten ist Apache Maven.
+Der sinnvollste Weg, ein \ac{JSF} Projekt zu verwalten, ist Apache Maven.
 Das Tool wird von der \gls{Apache Software Foundation} entwickelt und dient zur Verwaltung von Softwareprojekten überwiegend im JAVA Umfeld. 
 
 Für die Entwicklung und Integration von Maven in Eclipse bietet sich die Installation des Plugins \texttt{m2e} bzw. \texttt{m2eclipse} an. Die Integration und Verwendung von Maven in Eclipse ist unter \cite{EclM2E} näher beschrieben. 
 
 Bei Maven steht vorallem die Integration der Webapp sowie die Bibliotheks- und Versionsverwaltung im Vordergrund. Die genaue Funktionsweise wird im späteren Verlauf noch erklärt. 
 Das erstellte \gls{Apache Maven}-Projekt kann somit in Eclipse importiert und dort bearbeitet werden oder wird schon zu Beginn in Eclipse angelegt. 
-Eine Integration von \gls{Apache Tomcat} in Eclipse bietet dann die Möglichkeit die Webapp ohne umständliches Erstellen und Installieren auf dem \gls{Servlet-Container} zu verwenden.
+Eine Integration von \gls{Apache Tomcat} in Eclipse bietet dann die Möglichkeit, die Webapp ohne umständliches Erstellen und Installieren auf dem \gls{Servlet-Container} zu verwenden.
 
 % Maven Workflow
 \begin{wrapfigure}[12]{r}{12cm}
@@ -78,10 +78,10 @@ Eine Integration von \gls{Apache Tomcat} in Eclipse bietet dann die Möglichkeit
 \label{fig:Maven_Verwaltung}
 \end{wrapfigure}
 
-In \prettyref{fig:Maven_Verwaltung} wird die Verwaltung mit Hilfe von Maven darstellt.
+In \prettyref{fig:Maven_Verwaltung} wird die Verwaltung mit Hilfe von Maven dargestellt.
 
 Ein grundlegendes Konzept von Maven lautet: 'convention over configuration' (Konvention vor Konfiguration).
-Konkret bedeutet dies, dass sich Maven standarmäßig immer so verhält, wie es für die meisten Projekte sinnvoll ist und nur bei Abweichung von Normen konfiguriert werden soll.
+Konkret bedeutet dies, dass sich Maven standardmäßig immer so verhält, wie es für die meisten Projekte sinnvoll ist und nur bei Abweichung von Normen konfiguriert werden soll.
 Zu diesem Konzept gehört auch die Verzeichnisstruktur, die standardmäßig verwendet wird, bei Bedarf aber angepasst werden kann.
 
 Der Aufbau einer Verzeichnisstruktur für Webandwendungen ist folgendermaßen aufgebaut:
@@ -154,7 +154,7 @@ Maven bildet die Quellen im Verzeichnis \texttt{src} und die lauffähige Version
 \end{wrapfigure}
 
 Das Herzstück eines Maven-Projekts bildet das \ac{POM}, welches durch die Datei \texttt{pom.xml} repräsentiert wird. Ein Ausschnitt ist in \prettyref{lstmin:pom.xml} zu sehen.
-Darunter finden sich unter anderem Informationen über die Art des Projekts, Angaben zur Art des Erstellvorgangs und Abhängigkeiten wie z.B. der JSF-myFaces Core-\gls{API}, JSF-myFaces Tomahawk, und PostgreSQL.
+Darunter finden sich unter anderem Informationen über die Art des Projekts, Angaben zur Art des Erstellvorgangs und Abhängigkeiten, wie z.B. der JSF-myFaces Core-\gls{API}, JSF-myFaces Tomahawk und PostgreSQL.
 
 Mit dem Element \texttt{packaging} wird angegeben, dass das Projekt als WAR-Archiv gepackt werden soll.
 
@@ -167,7 +167,7 @@ standardmäßig definiert. Es bedeutet, dass ein Artefakt in jedem Classpath vor
 
 \texttt{provided},
 
-Artefakte sind nur beim Kompilieren im Classpath enthalten und werden nicht in die fertige Anwendung integriert. Das ist dann sinnvoll wenn Artefakte zum Kompilieren benötigt werden, aber beim Ausführen sich ohnehin im JDK befinden.
+Artefakte sind nur beim Kompilieren im Classpath enthalten und werden nicht in die fertige Anwendung integriert. Das ist dann sinnvoll, wenn Artefakte zum Kompilieren benötigt werden, aber beim Ausführen sich ohnehin im JDK befinden.
 
 \texttt{runtime},
 
@@ -175,7 +175,7 @@ die Artefakte werden zum Ausführen und Testen benötigt, aber nicht zum Kompili
 
 \texttt{test},
 
-wenn Artefakte fürn Tests beötigt werden. Sie sind nicht in der fertigen Anwendung enthalten und außerdem nur beim Kompilieren und Ausführen von Tests verfügbar.
+wenn Artefakte fürn Tests benötigt werden. Sie sind nicht in der fertigen Anwendung enthalten und außerdem nur beim Kompilieren und Ausführen von Tests verfügbar.
 Alle hier aufgeführten \texttt{scopes} sind in \cite{MVNintrodep} zu finden. 
 
 	%% Listing: git clone
@@ -195,12 +195,12 @@ Alle hier aufgeführten \texttt{scopes} sind in \cite{MVNintrodep} zu finden.
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/pom.xml}
 
-Beim Auflösen der Abhängigkeiten eines Projekts, bspw. während dem Kompiliervorgang, prüft Maven zunächt an welcher Stelle sich benötigte Artefakte befinden. Zunächst wird das lokale Repository geprüft. Hierbei handelt es sich um ein Verzeichnis im lokalen Dateisystem.
-Ist das nicht der Fall, versucht Maven sich die Artefakte über das Central Repository, einer durch Apache bereitgestellten Sammlung von Artefakten, herunterlzuladen. 
+Beim Auflösen der Abhängigkeiten eines Projekts, bspw. während dem Kompiliervorgang, prüft Maven zunächst, an welcher Stelle sich benötigte Artefakte befinden. Zunächst wird das lokale Repository geprüft. Hierbei handelt es sich um ein Verzeichnis im lokalen Dateisystem.
+Ist das nicht der Fall, versucht Maven sich die Artefakte über das Central Repository, einer durch Apache bereitgestellten Sammlung von Artefakten, herunterzuladen. 
 
 \subsection{Verteilungs- und Versionskontrolle mit Git}
 
-Wie bereits erwähnt wurde das Projekt mit der Hilfe der Versionskontrolle Git realisiert. Git stellt, neben \gls{Subversion} (SVN) und \gls{Mercurial}, das beliebteste Werkzeug zur Verteilung von Daten mit Versionskontrolle dar.
+Wie bereits erwähnt, wurde das Projekt mit der Hilfe der Versionskontrolle Git realisiert. Git stellt, neben \gls{Subversion} (SVN) und \gls{Mercurial}, das beliebteste Werkzeug zur Verteilung von Daten mit Versionskontrolle dar.
 
 \begin{wrapfigure}[8]{l}{7cm}
  \begin{center}
@@ -212,11 +212,11 @@ Wie bereits erwähnt wurde das Projekt mit der Hilfe der Versionskontrolle Git r
 \newpage
 
 Entwickelt wurde Git ursprünglich für Aktualisierungen des Linux-Kernels. Es verbreitete sich jedoch schnell in Kreisen der Softwareentwicklung für Verteilung, Versionskontrolle und Backup.
-Software dieser Art wird dazu verwendet alle Dateien eines Projekts bei jedem Mitwirkendem aktuell und gleich zu halten. Ein weiterer Vorteil ist es hierbei, dass auf jede beliebige Vorgängerversion zurückgegriffen werden kann. So kann bei schwerwiegenden Fehlern zu einer funktionstüchigen Version gesprungen werden. Der positive Nebeneffekt sind daher auch Backups des kompletten Projekts die im sogenannten Git-Repository sind. 
+Software dieser Art wird dazu verwendet, alle Dateien eines Projekts bei jedem Mitwirkenden aktuell und gleich zu halten. Ein weiterer Vorteil ist hierbei, dass auf jede beliebige Vorgängerversion zurückgegriffen werden kann. So kann bei schwerwiegenden Fehlern zu einer funktionstüchigen Version gesprungen werden. Der positive Nebeneffekt sind daher auch Backups des kompletten Projekts, die im sogenannten Git-Repository sind. 
 
-Obwohl der Sinn und Zweck im allgemeinen der gleiche ist, trifft man bei Git auf einige Unterschiede gegenüber traditionelleren Versionskontrollsystemen wie bspw. SVN, die kurz beschrieben werden sollen:
+Obwohl der Sinn und Zweck im Allgemeinen der gleiche ist, trifft man bei Git auf einige Unterschiede gegenüber traditionelleren Versionskontrollsystemen wie bspw. SVN, die kurz beschrieben werden sollen:
 
-Die Verteilung der Daten wird nicht wie bei SVN über eine zentrale Client-Server Struktur realisiert sondern über eine dezentrale Client-Server Struktur, ähnlich wie bei \gls{Peer-to-Peer} (P2P) Netzwerken (\cite{MaSch-P2PN}, 57 ). beschrieben sind. Die \prettyref{figmin:Git} stellt so eine Netzwerkverteilung dar. Dabei sind die farblichen Unterschiede der Kanten als eine Verbindung zu einem Git-Repository zu interpretieren. Die gestrichelten Linien stellen noch nicht etablierte Verbindungen dar.
+Die Verteilung der Daten wird nicht wie bei SVN über eine zentrale Client-Server Struktur realisiert, sondern über eine dezentrale Client-Server Struktur, ähnlich wie bei \gls{Peer-to-Peer} (P2P) Netzwerken (\cite{MaSch-P2PN}, 57 ). Die \prettyref{figmin:Git} stellt so eine Netzwerkverteilung dar. Dabei sind die farblichen Unterschiede der Kanten als eine Verbindung zu einem Git-Repository zu interpretieren. Die gestrichelten Linien stellen noch nicht etablierte Verbindungen dar.
 
 % GIT-Netzwerk
 \begin{figure}[H]
@@ -247,12 +247,12 @@ Die Verteilung der Daten wird nicht wie bei SVN über eine zentrale Client-Serve
   \label{figmin:Git}
 \end{figure}
 
-Für die Git-Verwaltung des Projekts, wurde \iz{Github}{\url{https://github.com/}} verwendet. Um mit Github arbeiten zu können wird ein gültiger Account vorrausgesetzt.
+Für die Git-Verwaltung des Projekts wurde \iz{Github}{\url{https://github.com/}} verwendet. Um mit Github arbeiten zu können, wird ein gültiger Account vorrausgesetzt.
 Mit Git kann in der Konsole gearbeitet werden oder es existieren Plugins für die IDE, was die Arbeit und Entwicklung weniger aufwendig macht.
 
-An dieser Stelle soll kurz gezeigt werden wie mit Git über die Konsole gearbeitet werden kann.
+An dieser Stelle soll kurz gezeigt werden, wie mit Git über die Konsole gearbeitet werden kann.
 
-Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
+Ist bereits ein Git-Repositoty angelegt, kann wie folgt vorgegangen werden:
 
 \begin{enumerate}
   \item das bereits existierende Verzeichnis mit dessen gesamten Inhalt wird 'geklont'. Danach können beliebige Veränderungen vorgenommen werden
@@ -339,7 +339,7 @@ Ist bereits ein Git-Repositoty angelegt kann wie folgt vorgegangen werden:
 \end{enumerate}
 
 
-Ist bisher, noch kein Repository eingerichtet und ein neues soll erstellt werden, läuft der Vorgang wie folgt ab:
+Ist bisher noch kein Repository eingerichtet und ein neues soll erstellt werden, läuft der Vorgang wie folgt ab:
 
 \begin{enumerate}
 
@@ -362,9 +362,9 @@ Ist bisher, noch kein Repository eingerichtet und ein neues soll erstellt werden
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/git_init.console}
 
-  \item Dateien die übertragen werden sollen werden also dem Paket hinzugefügt (\texttt{add})
+  \item Dateien die übertragen werden sollen, werden also dem Paket hinzugefügt (\texttt{add})
   
-  \item die hinzugefügten Dateien werden für das übertragen vorbereitet (\texttt{commit})
+  \item die hinzugefügten Dateien werden für das Übertragen vorbereitet (\texttt{commit})
   
   \item nun muss ein Git-Repository (in diesem Fall auf Github) angelegt werden. In diesem Beispiel wird die Verbindung über \gls{HTTPS} aufgebaut. Git unterstützt aber ebenso auch Verbindungen über SSH. Diese sind generell aber mit etwas mehr Aufwand zu realisieren.   
   
@@ -401,14 +401,14 @@ Das verschafft Vorteile beim Einstieg in Java Server Faces, aber auch dann, wenn
 
 \subsection{Java Server Faces}
 
-JSF ist eine auf JAVA basierende Webtechnologie die auf den Standards der Servlets- und JSP-Techniken aufsetzt.
+JSF ist eine auf JAVA basierende Webtechnologie, die auf den Standards der Servlets- und JSP-Techniken aufsetzt.
 Es ist ein eigenes plattformunabhängiges Framework zum vereinfachten Erstellen der Benutzeroberflächen in Webapps.
-Dies wird dadurch erreicht, dass der Entwickler die Möglichkeit hat die Benutzerschnittstellen auf eine einfache Art und Weise in eine Website einzubinden und die gesamte Navigation serverseitig zu definieren.
+Dies wird dadurch erreicht, dass der Entwickler die Möglichkeit hat, die Benutzerschnittstellen auf eine einfache Art und Weise in eine Website einzubinden und die gesamte Navigation serverseitig zu definieren.
 Darüber hinaus können alle clientseitigen Events an serverseitige Handler gebunden werden. 
 
 Voraussetzungen zur Entwicklung mit JSF sind Grundkenntnisse mit der Programmiersprache JAVA und mit dem damit verbundenen \gls{JDK} sowie dem \gls{HTTP} Protokoll.
 Zur Darstellung wird ein Servlet-Container, zum Beispiel ein Apache Tomcat, benötigt.
-Für die Obeflächengestaltung der Webiste ist ein grundlegendes Verständnis der HTML-Technik von Vorteil.
+Für die Oberflächengestaltung der Webiste ist ein grundlegendes Verständnis der HTML-Technik von Vorteil.
 
 Zunächst soll in diesem Abschnitt der Arbeit die grundlgende Funktionsweise des JSF-Standards dargestellt und beschrieben werden. 
 
@@ -469,9 +469,9 @@ Die zentrale Idee von JSF beruht auf dem Konzept der Komponenten. Diese fördern
 \label{fig:IrianLfCycl}
 \end{figure}
 
-Um eine einheitliche Struktur der Anwendung zu schaffen wird nach dem \ac{MVC} Prinzip das Modell, die Präsentation und die Steuerung voneinander getrennt, verdeutlicht wird dies unter \cite{IrianMVC}. Auch die \prettyref{fig:JSFMVC} erläutert das Modell im Bezug auf den JSF Lebenszyklus detailiert.
+Um eine einheitliche Struktur der Anwendung zu schaffen, wird nach dem \ac{MVC} Prinzip das Modell, die Präsentation und die Steuerung voneinander getrennt, verdeutlicht wird dies unter \cite{IrianMVC}. Auch die \prettyref{fig:JSFMVC} erläutert das Modell im Bezug auf den JSF Lebenszyklus detailiert.
 
-Unterstützt wird dieses Konzept durch die sogenannte View-Komponente, welche als Baumstruktur der JSF-Komponenten interpretiert werden können. Jede JSF-Anwendung unterliegt einem Lebenszyklus welcher auf der \prettyref{fig:IrianLfCycl} zu sehen ist, der View steht zu Beginn eines Zyklus.
+Unterstützt wird dieses Konzept durch die sogenannte View-Komponente, welche als Baumstruktur der JSF-Komponenten interpretiert werden kann. Jede JSF-Anwendung unterliegt einem Lebenszyklus, welcher auf der \prettyref{fig:IrianLfCycl} zu sehen ist, der View steht zu Beginn eines Zyklus.
 
 %% Lebenszyklus
 \begin{wrapfigure}[20]{r}{10cm}
@@ -524,11 +524,11 @@ Unterstützt wird dieses Konzept durch die sogenannte View-Komponente, welche al
 \label{fig:JSFMVC}
 \end{wrapfigure}
 
-Vor dem Ende des Zyklus wird das Wurzelelemnt des Views erneut rekursiv aufgerufen. Dieser Vorgang generiert die Antwort, welche bspw. eine HTML-Seite sein kann. Für die Deklaration der Webansicht
+Vor dem Ende des Zyklus wird das Wurzelelement des Views erneut rekursiv aufgerufen. Dieser Vorgang generiert die Antwort, welche bspw. eine HTML-Seite sein kann. Für die Deklaration der Web-ansicht
 gibt es viele Möglichkeiten.
 Die hier genannten Erklärungen zum Lebenszyklus einer JSF Anwendung sind in \cite{IrianLfCycl} beschrieben.
-Betrachtet man bspw. andere Frameworks wie \gls{Turbine} so dient als Seitendeklarationssprache, englisch \ac{VDL} genannt, \gls{Velocity} und bei \gls{Cocoon} ein abstrahierter XML-Dialekt. Bei JSF (und im übrigen auch bei \gls{Struts}) vor Version 2.0 wurden Java Server Pages eingesetzt.
-Erst ab der Version 2.0 setzt JSF standardmäßig XHTML, bekannt als die sog. Facelets auf welche in \prettyref{subsec:Darstellung von Seiteninhalten} näher eingegangen wird, als Seitendeklarationssprache ein. XHTML entwickelte sich aus HTML und XML, nachdem sich gezeigt hatte, dass HTML selbst nicht XML konform ist. XHTML wird als Schnittmenge aus HTML und XML verstanden (\cite{BaRiSch-WT}, 33).
+Betrachtet man bspw. andere Frameworks wie \gls{Turbine}, so dient als Seitendeklarationssprache, englisch \ac{VDL} genannt, \gls{Velocity} und bei \gls{Cocoon} ein abstrahierter XML-Dialekt. Bei JSF (und im übrigen auch bei \gls{Struts}) vor Version 2.0 wurden Java Server Pages eingesetzt.
+Erst ab der Version 2.0 setzt JSF standardmäßig XHTML, bekannt als die sog. Facelets, auf welche in \prettyref{subsec:Darstellung von Seiteninhalten} näher eingegangen wird, als Seitendeklarationssprache ein. XHTML entwickelte sich aus HTML und XML, nachdem sich gezeigt hatte, dass HTML selbst nicht XML konform ist. XHTML wird als Schnittmenge aus HTML und XML verstanden (\cite{BaRiSch-WT}, 33).
 
 Benutzereingaben können über eigene Komponenten oder mit einem Data Handler, aus JAVA Code bestehend, geschrieben werden. Diese Controller-Komponente entspricht dem Controller im \ac{MVC} Modell.
 Die letzte Komponente, die Model-Komponente, beinhaltet die Logik der Webapp. In JSF sind diese Komponenten die sog. \gls{Java-Beans}, welche vom Servlet-Container verwaltet werden.
@@ -537,19 +537,19 @@ Die eigentliche Ansicht der Website, die dem Betrachter zur Verfügung gestellt 
 Darüber hinaus bietet JSF den Entwicklern weitere Möglichkeiten, sich eigene Renderer zusammenzustellen (\cite{WikiJSF01}).
 
 \subsubsection{Darstellung von Seiteninhalten mit Facelets}\label{subsec:Darstellung von Seiteninhalten}
-Bisher wurden lediglich Eindrücke die auf die Konzeption und die allgemeine Verarbeitung von Informationen in JSF eingehen, vermittelt. Nun soll die Darstellung der Informationen durch JSF erklärt werden.
+Bisher wurden lediglich Eindrücke, die auf die Konzeption und die allgemeine Verarbeitung von Informationen in JSF eingehen, vermittelt. Nun soll die Darstellung der Informationen durch JSF erklärt werden.
 
 Die JSF-Technologie unterstützt, wie schon im vorherigen Abschnitt erwähnt, mehrere Arten zur Anzeige von Seiteninhalten. 
-Vor Version JSF 2.0 wurde standarmäßig JSP als Seitendeklarationssprache eingesetzt um die neu entwickelte Technologie zu etablieren und um für Entwickler die Probleme der Sprachbarrieren niedrig zu halten.
+Vor Version JSF 2.0 wurde standardmäßig JSP als Seitendeklarationssprache eingesetzt, um die neu entwickelte Technologie zu etablieren und um für Entwickler die Probleme der Sprachbarrieren niedrig zu halten.
 Da JSP noch immer ein weit verbreiteter Standard ist, wird es auch noch heute für JSF Projekte eingesetzt.
 Das große Problem bei dieser Art der Implementierung ist, dass die Kombination von JSF und JSP keine gute Lösung darstellt. Die Problematik rührt daher, dass beide Technologien für unterschiedliche Einsatzzwecke entworfen wurden.
 
-Wie oben schon beschrieben wird eine JSF Applikation in mehreren Phase abgearbeitet. Der Aufbau der Struktur von Komponenten und die Darstellung der Ausgabe wird hierbei in mehreren Phasen realisiert.
+Wie oben schon beschrieben, wird eine JSF Applikation in mehreren Phasen abgearbeitet. Der Aufbau der Struktur von Komponenten und die Darstellung der Ausgabe wird hierbei in mehreren Phasen realisiert.
 Im Gegensatz hierzu: JSP, welches mit nur einer einzigen Phase abgearbeitet wird. Die Antwort vom Server wird direkt in ihr ausgegeben. JSP Seiten stechen vor allem durch ihren Aufbau hervor.
-Die Ausgabe die der Sever darstellen muss wird in einer JSP-Seite immer durch die Verwendung der JAVA-Funktion \texttt{out.println()} in HTML Seiten generiert, was zur Folge haben kann, dass Seiteninhalte vor anderen dargestellt werden oder das Design an Konsistenz verliert. Das geschieht vor allem dann wenn normale HTML- und Text-Elemente zum Einsatz kommen.
+Die Ausgabe, die der Sever darstellen muss, wird in einer JSP-Seite immer durch die Verwendung der JAVA-Funktion \texttt{out.println()} in HTML Seiten generiert, was zur Folge haben kann, dass Seiteninhalte vor anderen dargestellt werden oder das Design an Konsistenz verliert. Das geschieht vor allem dann, wenn normale HTML- und Text-Elemente zum Einsatz kommen.
 
-Um diese Problematiken in den Griff zu bekommen wurden die Facelets entwickelt. Hierbei handelt es sich ebenfalls um eine VDL, allerdings ist die dem Lebenszyklus von JSF-Applikationen angepasst.
-Hierzu werden Inhalte aus XHTML-Dokumenten wie sie in \prettyref{fig:tree_form} zu sehen ist verknüpft um einen strukturierten Komponentenbaum aufzubauen.
+Um diese Problematiken in den Griff zu bekommen, wurden die Facelets entwickelt. Hierbei handelt es sich ebenfalls um eine VDL, allerdings ist die dem Lebenszyklus von JSF-Applikationen angepasst.
+Hierzu werden Inhalte aus XHTML-Dokumenten verknüpft um einen strukturierten Komponentenbaum aufzubauen.
 
 %% Listing: eigene Komponente als Beispiel
 	\lstinputlisting[label={lst:tree_form},
@@ -566,11 +566,11 @@ Hierzu werden Inhalte aus XHTML-Dokumenten wie sie in \prettyref{fig:tree_form} 
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/tree_form.xhtml}
 
-Wie oben schon erwähnt sind Facelets mittlerweile in JSF 2.0 zum Standard geworden, JSP wird nur noch aus Gründen der Kompatibilität unterstützt und besondere Features lassen sich in JSF sogar nur noch mit Hilfe von Facelets umsetzen. 
+Wie oben schon erwähnt, sind Facelets mittlerweile in JSF 2.0 zum Standard geworden, JSP wird nur noch aus Gründen der Kompatibilität unterstützt und besondere Features lassen sich in JSF sogar nur noch mit Hilfe von Facelets umsetzen. 
 
 Aufgrund der Tatsache, dass Facelets speziell für JSF konzipiert und entwickelt wurden, bieten sie natürlich viele Vorteile.
 Das Erstellen und Ausgeben von Seitenansichten wird mit Facelets effizienter. 
-Dies schlägt sich in der Entwicklung von Seiten so wie in deren Geschwindigkeit beim Seitenaufbau nieder.
+Dies schlägt sich in der Entwicklung von Seiten sowie in deren Geschwindigkeit beim Seitenaufbau nieder.
 
 Zur Unterstützung der Wiederverwendbarkeit können JSF Seiten mit Hilfe der Facelets Template-basierend aufgebaut werden. Das bedeutet, dass komplette Seitenfragmente zentral abgelegt werden können und bei Bedarf in andere Seiten eingebettet werden. So kann bspw. ein Layout für einen Seitenkopf einmal definiert werden, um ihn dann später in anderen Seiten wiederverwenden zu können.
 Dies verbessert zum einen die Wartbarkeit der Seiten und birgt den Vorteil der Modularisierung in ganzen Projekten.
@@ -614,8 +614,8 @@ Wird der definierte \prettyref{lst:template} aufgerufen, so würde folgende HTML
 	backgroundcolor=\color{lightgrey}]{listings/tree_form_rendered.xhtml}
 
 
-Neben den Templates können auch komplett eigene Komponenten erstellt werden. Das ist vor allem dann vorteilhaft wenn HTML-Code nach eigenen Vorstellungen eingebettet werden soll.
-Hierzu wird über das \texttt{jsfc}-Attribut der Facelet-Compiler angewiesen beliebige XML-Elemente in Komponenten umzuwandeln. 
+Neben den Templates können auch komplett eigene Komponenten erstellt werden. Das ist vor allem dann vorteilhaft, wenn HTML-Code nach eigenen Vorstellungen eingebettet werden soll.
+Hierzu wird über das \texttt{jsfc}-Attribut der Facelet-Compiler angewiesen, beliebige XML-Elemente in Komponenten umzuwandeln. 
 Ein Beispiel zeigt der \prettyref{lst:custInputComponent}
 
 	%% Listing: eigene Komponente als Beispiel
@@ -634,7 +634,7 @@ Ein Beispiel zeigt der \prettyref{lst:custInputComponent}
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/custInputComponent.xhtml}
 	
-Im nächsten Abschnitt soll nun das dynamische erzeugen von Seiten mit JSF erklärt werden.
+Im nächsten Abschnitt soll nun das dynamische Erzeugen von Seiten mit JSF erklärt werden.
 
 \subsubsection{Managed-Beans in JSF}
 
@@ -652,7 +652,7 @@ Die Namen solcher Methoden unterliegen gewissen Konventionen:
   \item \texttt{set}[Eigenschaftsname]: schreibender Zugriff
 \end{itemize}
 
-Der \prettyref{lst:UserBean.java} zeigt eine Managed-Bean Klasse mit jeweils 2 Methoden für einen der beiden privaten Strings der Klasse, \texttt{firstName} und \texttt{lastName}.
+Der \prettyref{lst:UserBean.java} zeigt eine Managed-Bean Klasse mit jeweils 2 Methoden für einen der beiden privaten Strings der Klasse \texttt{firstName} und \texttt{lastName}.
 
 	%% Listing: UserBean
 	\lstinputlisting[
@@ -670,7 +670,7 @@ Der \prettyref{lst:UserBean.java} zeigt eine Managed-Bean Klasse mit jeweils 2 M
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/TestBean.java}
 
-Dabei ist egal ob mit den Methoden auf private Variablen zugegriffen wird oder ob komplexere Algorithmen ausgeführt werden, es ist in jedem Fall nur, die Eigenschaft auf die zugegriffen wird, sichtbar.
+Dabei ist egal, ob mit den Methoden auf private Variablen zugegriffen wird oder ob komplexere Algorithmen ausgeführt werden, es ist in jedem Fall nur die Eigenschaft auf die zugegriffen wird, sichtbar.
 
 Das dazugehörige Facelet stellt der \prettyref{lst:UserAdd1.xhtml} dar. Das Facelet zeigt ein kleines Eingabeformular, in welches einmal der Vorname und einmal der Nachname über Eingabefelder vom User eingegeben werden können. Im Facelet wird dies durch die Angabe der zu verwendenden Property \texttt{\#\{userBean.firstName\} } und \texttt{\#\{userBean.lastName\} } realisiert. Die Werte die im Textfeld eingegeben werden, werden auch von der Managed-Bean verarbeitet, indem die Setter-Methode, durch den Audruck des Attributs \texttt{value}, für das Feld \texttt{firstName} bzw. \texttt{lastName} der Bean \texttt{Customer} aufruft und die eingegebenen Werte weiter verarbeitet.
 
@@ -678,7 +678,7 @@ So kann also eine wichtige Aufgabe mit JSF relativ unproblematisch erledigt werd
 Nun sollen die Daten die ins Formular eingegeben werden weiterverarbeitet werden.
 Hierzu wird im Formular der Button mit \texttt{action="sendUser()"} definiert. Beim Klick wird die Aktion \texttt{sendUser()} in der dazugehörigen Bean aufgerufen und die Daten aus dem Formular können wie gewünscht weiterverarbeitet werden.
 
-Gleiches Prinzip funktioniert ebenfalls für eine Ausgabe am Bildschirm, bspw. über den xhtml-Tag \texttt{h:outputText}. Es würde die relevante Getter-Methode aufgerufen werden und wiederum das dazugehörige Feld ausgegeben werden. 
+Das gleiche Prinzip funktioniert ebenfalls für eine Ausgabe am Bildschirm, bspw. über den xhtml-Tag \texttt{h:outputText}. Es würde die relevante Getter-Methode aufgerufen werden und wiederum das dazugehörige Feld ausgegeben werden. 
 
 	%% Listing
 	\lstinputlisting[label={lst:UserAdd1.xhtml},
@@ -693,8 +693,8 @@ Gleiches Prinzip funktioniert ebenfalls für eine Ausgabe am Bildschirm, bspw. �
 	keywordstyle=\bfseries\color{lila}, 
 	backgroundcolor=\color{lightgrey}]{listings/TestFacelet_Eingabe.xhtml}
 
-Ein Ausdruck beginnt immer mit einem den Zeichen \texttt{\$} oder \texttt{\#}. Begrenzt wird der Ausdruck durch geschweifte Klammern. Der Unterschied des \texttt{\$}-Zeichens zum \texttt{\#}-Zeichen ist, dass mit ihm nur lesend auf ein Property zugegriffen werden kann.
-Der Ausdruck wird sofort evaluiert und ausgegeben. Er eignet sich daher für einfach Textausgaben.
+Ein Ausdruck beginnt immer mit den Zeichen \texttt{\$} oder \texttt{\#}. Begrenzt wird der Ausdruck durch geschweifte Klammern. Der Unterschied des \texttt{\$}-Zeichens zum \texttt{\#}-Zeichen ist, dass mit ihm nur lesend auf ein Property zugegriffen werden kann.
+Der Ausdruck wird sofort evaluiert und ausgegeben. Er eignet sich daher für einfache Textausgaben.
 
 Diese Ausdrücke sind Teil der \ac{UEL}, also eine Art von vordefinierten Facelet-Tags, mit deren Hilfe auf alle Properties einer Managed-Bean zugegriffen werden kann. 
 	
@@ -732,7 +732,7 @@ Die nachstehende Tabelle zeigt die möglichen Gültigkeitsbereiche für Managed-
 \end{table}
 
 Der Tabelle kann entnommen werden, dass die verschiedenen Scopes auch unterschiedlich lange Lebensdauern in einer Webapplikation besitzen.
-Spezialfall ist hier der Gültikeitsbereich \texttt{@NoneScoped}. In diesem wird die Managed-Bean nicht gespeichert sondern bei jedem Aufruf neu erstellt.
+Spezialfall ist hier der Gültigkeitsbereich \texttt{@NoneScoped}. In diesem wird die Managed-Bean nicht gespeichert, sondern bei jedem Aufruf neu erstellt.
 Der \texttt{@ApplicationScope}-Gültigkeitsbereich hingegen bildet den Gegensatz. Dieser gilt für die gesamte Lebendauer der App.
 
 % Scope Lebendauern
@@ -770,10 +770,10 @@ Der \texttt{@ApplicationScope}-Gültigkeitsbereich hingegen bildet den Gegensatz
 
 \subsection{PostreSQL}
 
-PostgreSQL ist quelloffen und ein sehr mächtiges objekt-relationales Datenbankmodell und -system. Mittlerweile unterliegt es mehr als 15 Jahren aktiver Entwicklung und wird stetig weiter verbessert. Aufgrund dieser langen Zeit konnte sich PostgreSQL einen guten Namen machen und wird aufgrund der Einfachheit Daten zu integrieren und zu verwalten häufig eingesetzt.
-Ein großer Vorteil von PostgreSQL ist desweiteren, dass es von allen gängigen Betriebssystemen wie Linux, Unix (BSD, Solaris, Mac OS X) und Windows, unterstützt wird. Somit existieren auch grafische Benutzeroberflächen zur \ac{DB}-Verwaltung, wie das von uns eingesetzte \gls{pgAdmin III}.
-Neben den Betriebssystemen werden auch nahezu alle gängigen Programmiersprachen unterstützt als Beispiele seien \gls{C/C++}, \gls{JAVA}, \gls{.Net}, \gls{Perl}, \gls{Python} und \gls{Ruby} genannt.
-Diese allgemeinen Informationen sowie die \prettyref{tab:PostgreSQLValues}, welche die Speicheverwaltungswerte auflistet, wurden der offiziellen PostgreSQL-Projektseite, welche unter \cite{PostgreSQLAllg} zu finden ist, entnommen. Ein Download-Paket des gesamten \ac{DB}-Systems kann unter \cite{PostgreSQLDwnld} bezogen werden. 
+PostgreSQL ist quelloffen und ein sehr mächtiges objekt-relationales Datenbankmodell und -system. Mittlerweile unterliegt es mehr als 15 Jahren aktiver Entwicklung und wird stetig weiter verbessert. Aufgrund dieser langen Zeit konnte sich PostgreSQL einen guten Namen machen und wird aufgrund der Einfachheit, Daten zu integrieren und zu verwalten häufig eingesetzt.
+Ein großer Vorteil von PostgreSQL ist desweiteren, dass es von allen gängigen Betriebssystemen wie Linux, Unix (BSD, Solaris, Mac OS X) und Windows unterstützt wird. Somit existieren auch grafische Benutzeroberflächen zur \ac{DB}-Verwaltung, wie das von uns eingesetzte \gls{pgAdmin III}.
+Neben den Betriebssystemen werden auch nahezu alle gängigen Programmiersprachen unterstützt. Als Beispiele seien \gls{C/C++}, \gls{JAVA}, \gls{.Net}, \gls{Perl}, \gls{Python} und \gls{Ruby} genannt.
+Diese allgemeinen Informationen, sowie die \prettyref{tab:PostgreSQLValues}, welche die Speicheverwaltungswerte auflistet, wurden der offiziellen PostgreSQL-Projektseite, welche unter \cite{PostgreSQLAllg} zu finden ist, entnommen. Ein Download-Paket des gesamten \ac{DB}-Systems kann unter \cite{PostgreSQLDwnld} bezogen werden. 
 
 % Speicherverwaltung
 \begin{table}[H]
@@ -793,13 +793,13 @@ Diese allgemeinen Informationen sowie die \prettyref{tab:PostgreSQLValues}, welc
 \end{center}
 \end{table}
 
-Da das 'KuWaSys' mit JSF implementiert ist, ist eine \gls{JDBC}-Schnittstelle unter zu Hilfenahme eines PostgreSQL-Treibers zum Einsatz gekommen. Diese Konzept bietet in Java die einfachste Möglichkeit um auf eine PostgreSQL \ac{DB} zuzugreifen. Bei dem verwendeten Treiber handelt es sich um ein JDBC-Treiber des Typ-4. 
+Da das 'KuWaSys' mit JSF implementiert ist, ist eine \gls{JDBC}-Schnittstelle unter Zuhilfenahme eines PostgreSQL-Treibers zum Einsatz gekommen. Dieses Konzept bietet in Java die einfachste Möglichkeit auf eine PostgreSQL \ac{DB} zuzugreifen. Bei dem verwendeten Treiber handelt es sich um ein JDBC-Treiber des Typ-4. 
 Typ-4 bedeutet, dass die JDBC-API Befehle direkt in \ac{DBMS} Befehle des jeweiligen Datenbankservers übersetzt werden.
 Es wird kein Middleware-Treiber benötigt. 
 Der Typ-4 ist damit der schnellste (wenn schnelle Netzwerkprotokolle verwendet werden) unter den vier verschiedenen Typen, dafür jedoch aufgrund der fehlenden Middleware weniger flexibel.
 Dadurch ist ein Treiber des Typ-4 besonders gut für Webapps im Intranet geeignet, weshalb das 'KuWaSys' mit Hilfe des Typ-4 Treibers umgesetzt ist.
 
-Der \prettyref{lst:JDBCCon} zeigt die Einbettung des JDBC-PostgreSQL Treibers in den JAVA Code. Dazu zeigt er einen beispielhaften Verbdindungsaufbau zur Datenbank mit Default-Werten und eine Test-String Ausgabe. Das JDBC-PostreSQL \gls{JAR}-Paket wurde hierzu bereits in Eclipse integriert. Dies kann über den Einstellungs-Wizard in den Projekt-Eigenschaften bewerkstelligt werden. 
+Der \prettyref{lst:JDBCCon} zeigt die Einbettung des JDBC-PostgreSQL Treibers in den JAVA Code. Dazu zeigt er einen beispielhaften Verbindungsaufbau zur Datenbank mit Default-Werten und eine Test-String Ausgabe. Das JDBC-PostreSQL \gls{JAR}-Paket wurde hierzu bereits in Eclipse integriert. Dies kann über den Einstellungs-Wizard in den Projekt-Eigenschaften bewerkstelligt werden. 
 
 % Listing: JDBC SQL Connection
 	\lstinputlisting[label={lst:JDBCCon},

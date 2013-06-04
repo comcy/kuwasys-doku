@@ -1,28 +1,28 @@
 \section{Modellierung}\label{sec:Modellierung}
 
-Die erste Phase der aktiven Softwareentwicklung befasst sich mit den Fragen zum System. Dabei gilt es besonders darauf zu achten, das vermeintliche 'triviale' Aufgabenstellungen mit berücksichtigt werden und nicht etwa vernachlässigt oder vergessen werden.  In \prettyref{subsec:Objektorientierte Modellierung} wird näher auf die diese Problematik eingegangen. Dieses Problem tritt vor allem dann auf, wenn das System in einer späteren Phase des Projekts noch sinnvoll erweitert werden soll oder in Zukunft eine bestimmte Funktionalität verbessert werden muss.
+Die erste Phase der aktiven Softwareentwicklung befasst sich mit den Fragen zum System. Dabei ist besonders darauf zu achten, dass vermeintlich 'triviale' Aufgabenstellungen mit berücksichtigt werden und nicht etwa vernachlässigt oder vergessen werden.  In \prettyref{subsec:Objektorientierte Modellierung} wird näher auf diese Problematik eingegangen. Dieses Problem tritt vor allem dann auf, wenn das System in einer späteren Phase des Projekts noch sinnvoll erweitert werden soll oder in Zukunft eine bestimmte Funktionalität verbessert werden muss.
 
-Um dem Leser einen möglichst genauen Einblick in die Phasen der Modellierung geben zu können, ist der Aufbau dieses Abschnitts wie in \prettyref{subsec:Uber diese Ausarbeitung} bereits erwähnt, so gewählt, dass die einzelnen Schritte nach den verschiedenen Rollen des System gegliedert sind.
+Um dem Leser einen möglichst genauen Einblick in die Phasen der Modellierung geben zu können, ist der Aufbau dieses Abschnitts, wie in \prettyref{subsec:Uber diese Ausarbeitung} bereits erwähnt, so gewählt, dass die einzelnen Schritte nach den verschiedenen Rollen des Systems gegliedert sind.
 
 Im ersten \prettyref{subsec:Anforderungen an das System} sollen alle Anforderungen an das neue System und damit die Anforderungen an unsere Projektarbeit skizzenhaft aufgezeigt werden.
 Im nächsten Schritt soll die Modellierung, und damit die ersten Überlegungen zum Design der Software, der gerade beschriebenen Anforderungen ausführlich besprochen werden.
-Im darauffolgenden Abschnitt soll die \ac{OOM} angesprochen werden. Es zeigt wie mit Hilfe der \gls{Unified Modelling Language} (UML) das erste Design des System ensteht.  
-Im \prettyref{subsec:Benutzerschnittstellen und Rollensystem} steht die Umsetzung des Systems und der verschiedenen Rollen im Vordergrund desweiteren zeigt es wie die Anforderungen umgesetzt sind.
+Im darauffolgenden Abschnitt soll die \ac{OOM} angesprochen werden. Es zeigt, wie mit Hilfe der \gls{Unified Modelling Language} (UML) das erste Design des System ensteht.  
+Im \prettyref{subsec:Benutzerschnittstellen und Rollensystem} steht die Umsetzung des Systems und der verschiedenen Rollen im Vordergrund, desweiteren wird aufgezeigt, wie die Anforderungen umgesetzt sind.
 Der \prettyref{subsec:Datenbankmodellierung} geht näher auf die Entwicklung des \ac{DB}-Systems zur Informationsverwaltung ein.
 Der letzte Abschnitt im Teil der Modellierung ist unter \prettyref{subsec:Konfiguration der Laufzeitumgebung und des Server} zu finden und beschreibt die komplette Konfiguration von Server und Infrastruktur, also der kompletten Laufzeitumgebung, an der Schillerschule. 
 
 \subsection{Anforderungen an das System}\label{subsec:Anforderungen an das System}
 
-Außer den Problemen die mit dem alten Tool bestehen gibt es zusätzlich weitere neue Anforderungen an das System, die den Schulalltag und vor allem die Kurswahl und -verwaltung einfacher machen sollen.
-Es werden dem Leser zunächst die Anforderungen an das neue Tool aufgezeigt um später Rückschlüsse auf die Funktionalität und die gesamte Umsetzung ziehen zu können.
+Außer den Problemen, die mit dem alten Tool bestehen, gibt es zusätzlich weitere neue Anforderungen an das System, die den Schulalltag und vor allem die Kurswahl und -verwaltung einfacher machen sollen.
+Es werden dem Leser zunächst die Anforderungen an das neue Tool aufgezeigt, um später Rückschlüsse auf die Funktionalität und die gesamte Umsetzung ziehen zu können.
 An dieser Stelle wird angemerkt, dass es sich hierbei um die originalen Anforderungsspezifikationen vor Projektbeginn handelt.
 
 \textbf{Allgemeine Systemanforderungen}
 
 \begin{itemize}
-  \item webbasierte Zugang zum System über das \ac{WWW} und im Intranet
-  \item Rollenunterstützung um Berechtigungen zu unterscheidende
-  \item Benutzerrelevante Daten sollen angezeigt werden und bearbeitet werden können
+  \item webbasierter Zugang zum System über das \ac{WWW} und im Intranet
+  \item Rollenunterstützung, um Berechtigungen zu unterscheiden
+  \item Benutzerrelevante Daten sollen angezeigt und bearbeitet werden können
 \end{itemize}
 
 \textbf{Schüler}
@@ -31,7 +31,7 @@ An dieser Stelle wird angemerkt, dass es sich hierbei um die originalen Anforder
   \item Wahl von Kursen
   \item Einsicht in Leistungsübersicht:
     \begin{itemize}
-      \item Protfoliofunktion 
+      \item Pprtfoliofunktion 
       \item Druck- und Exportfunktion
     \end{itemize}
 \end{itemize}
@@ -39,7 +39,7 @@ An dieser Stelle wird angemerkt, dass es sich hierbei um die originalen Anforder
 \textbf{Kurslehrer}
 
 \begin{itemize}
-  \item Einsicht der Teilnehmerlisten von Kursen
+  \item Einsicht in Teilnehmerlisten von Kursen
   \begin{itemize}
     \item Druck- und Exportfunktion
   \end{itemize}
@@ -52,14 +52,14 @@ An dieser Stelle wird angemerkt, dass es sich hierbei um die originalen Anforder
 \textbf{Klassenlehrer}
 
 \begin{itemize}
-  \item Einsicht einer Klassenübersicht
+  \item Einsicht in eine Klassenübersicht
   \begin{itemize}
     \item Druck- und Exportfunktion 
   \end{itemize}
   \item Eingabe von Leistungsnachweisen
   \begin{itemize}
     \item bearbeiten des Portfolios der einzelnen Schüler in der Klasse
-    \item Druck und Exportfunktion des Portfolios, der Klassenliste und alle Schüler mit ihren gewählten Kursen in der Klasse
+    \item Druck und Exportfunktion des Portfolios, der Klassenliste und aller Schüler mit ihren gewählten Kursen in der Klasse
   \end{itemize}
 \end{itemize}
  
@@ -74,9 +74,9 @@ An dieser Stelle wird angemerkt, dass es sich hierbei um die originalen Anforder
   \end{itemize}
 \end{itemize}
 
-Aus den ersten Überlegungen entstand folgende Mindmap welche unter \prettyref{fig:Projekt_Mindmap} zu sehen ist.
+Aus den ersten Überlegungen entstand folgende Mindmap, welche unter \prettyref{fig:Projekt_Mindmap} zu sehen ist.
 
-An erster Stelle befindet sich das System mit dessen Laufzeitkomponenten und Eigenschaften. Der zweite Punkt beinhaltet Schlagwörter die auf die Interaktionsmöglichkeiten des Systems zurückgehen. Schnell wurde klar, dass es sich um ein sehr dynamisches und stetig veränderndes System handeln muss. Außerdem mussten alle Anwendungsfälle des Systems möglichst zu Projektbeginn abgedeckt und durchdacht werden um später irreversible Änderungen zu vermeiden. Auf diesen Punkt wird allerdings in \prettyref{subsec:Objektorientierte Modellierung} noch näher eingegangen.
+An erster Stelle befindet sich das System mit dessen Laufzeitkomponenten und Eigenschaften. Der zweite Punkt beinhaltet Schlagwörter, die auf die Interaktionsmöglichkeiten des Systems zurückgehen. Schnell wurde klar, dass es sich um ein sehr dynamisches und sich stetig veränderndes System handeln muss. Außerdem mussten alle Anwendungsfälle des Systems möglichst zu Projektbeginn abgedeckt und durchdacht werden, um später irreversible Änderungen zu vermeiden. Auf diesen Punkt wird allerdings in \prettyref{subsec:Objektorientierte Modellierung} noch näher eingegangen.
 
 % KuWaSys MindMap
 \begin{figure}[H]
@@ -108,7 +108,7 @@ Wie bereits angesprochen, soll nun die \ac{OOM} zur Sprache kommen.
 \subsection{Objektorientierte Modellierung}\label{subsec:Objektorientierte Modellierung}
 
 Zu Beginn sollen die von uns erstellten Anwendungsfälle, die sich aufgrund genauerer Analyse der Anforderungsspezifikation des Systems ergeben haben, näher erläutert werden.
-Hierzu wurde die \ac{UML}, wie schon oben beschrieben, mit Hilfe eines \ac{UC-Diagramm}s, verwendet.
+Hierzu wurde die \ac{UML}, wie schon oben beschrieben, mit Hilfe von einem \ac{UC-Diagramm}, verwendet.
 
 \subsubsection{Use-Case Modell}
 
@@ -123,23 +123,23 @@ Hierzu wurde die \ac{UML}, wie schon oben beschrieben, mit Hilfe eines \ac{UC-Di
 
 'Ein \ac{UC} beschreibt die Funktionalität des Softwaresystems, die ein Akteur ausführen muss, um ein gewünschtes Ergebnis zu erhalten oder um ein Ziel zu erreichen. \ac{UC}s sollen es ermöglichen, mit dem zukünftigen Benutzer über die Funktionalität des Softwaresystems zu sprechen, ohne sich gleich in Details zu verlieren.' (\iz{Heide Balzert}{Informatikerin, die sich vor allem mit Fragen zum Thema Softwareengineering und -design beschäftigt. Derzeit ist sie Dozentin an der Fachhochschule Dortmund.}, \cite{BalzertH-UML2}, 28).
 
-Zusammenfassend bedeutet dies, dass ein \ac{UC-Diagramm} immer dann sinnvoll ist wenn die Interaktionsmöglichkeit eines Systems, basierend auf verschiedene Aktueren, aufgezeigt werden soll. Die Akteure (dargestellt als 'Strichmännchen') im Diagramm, entsprechen genau denen, die später vom Rollensystem unterstützt werden sollen. Die Ellipsen zeigen die verschiedenen Anwendungsfälle die im System existieren. In einem so allgemeinen \ac{UC-Diagramm} wird absichtlich auf kleinste Details verzichtet. So bedeutet zum Beispiel der \ac{UC} 'Klasse verwalten' sowohl das Bearbeiten einer Klasse als auch das Vergeben von Noten oder andere klassenadministrative Aufwendungen.
+Zusammenfassend bedeutet dies, dass ein \ac{UC-Diagramm} immer dann sinnvoll ist, wenn die Interaktionsmöglichkeit eines Systems, basierend auf verschiedenen Aktueren, aufgezeigt werden soll. Die Akteure (dargestellt als 'Strichmännchen') im Diagramm, entsprechen genau denen, die später vom Rollensystem unterstützt werden sollen. Die Ellipsen zeigen die verschiedenen Anwendungsfälle, die im System existieren. In einem so allgemeinen \ac{UC-Diagramm} wird absichtlich auf kleinste Details verzichtet. So bedeutet zum Beispiel der \ac{UC} 'Klasse verwalten' sowohl das Bearbeiten einer Klasse, als auch das Vergeben von Noten oder andere klassenadministrative Aufwendungen.
 
-Die gestrichelten Pfeile mit der Beschriftung '\texttt{$<<$include$>>$}' bezeichnen Anwendungsfälle in denen der \ac{UC}, auf welchen der Pfeil zeigt, implizit vorhanden ist wenn der \ac{UC}, von dem der Pfeil ausgeht, im System vorhanden ist. Das bedeutet wenn der \ac{UC} 'User anlegen' also vorhanden ist, auch die \ac{UC}s 'Schüler importieren' oder 'User verwalten' verwendet werden können. Ein erster \ac{UC} muss also immer erfolgen während ein zweiter (oder noch mehr) optional ausgeführt werden können.
+Die gestrichelten Pfeile mit der Beschriftung '\texttt{$<<$include$>>$}' bezeichnen Anwendungsfälle, in denen der \ac{UC}, auf welchen der Pfeil zeigt, implizit vorhanden ist, wenn der \ac{UC}, von dem der Pfeil ausgeht, im System vorhanden ist. Das bedeutet, wenn der \ac{UC} 'User anlegen' also vorhanden ist, dass auch die \ac{UC}s 'Schüler importieren' oder 'User verwalten' verwendet werden können. Ein erster \ac{UC} muss also immer erfolgen, während ein zweiter (oder noch mehr) optional ausgeführt werden können.
 
-Im Gegensatz hierzu bedeutet der gestrichelte Pfeil mit der Beschriftung '\texttt{$<<$extend$>>$}' von dem der Pfeil ausgeht, dass dieser \ac{UC} nur dann im System überhaupt vorhanden ist, wenn der \ac{UC} auf welchen der Pfeil zeigt im System vorhanden ist. Der \ac{UC} 'Kurs abwählen' ist also nur dann vorhanden wenn der \ac{UC} 'Kurs wählen' im System ausgeführt wurde. Der erste \ac{UC} wird durch den zweiten also erweitert.
+Im Gegensatz hierzu bedeutet der gestrichelte Pfeil mit der Beschriftung '\texttt{$<<$extend$>>$}', von dem der Pfeil ausgeht, dass dieser \ac{UC} nur dann im System überhaupt vorhanden ist, wenn der \ac{UC}, auf welchen der Pfeil zeigt, im System vorhanden ist. Der \ac{UC} 'Kurs abwählen' ist also nur dann vorhanden, wenn der \ac{UC} 'Kurs wählen' im System ausgeführt wurde. Der erste \ac{UC} wird durch den zweiten also erweitert.
 
 \subsubsection{Statisches Analysemodell}
 
-Im nächsten Schritt unserer Modellierung ist das statische Analysemodell, unter \prettyref{fig:UML_SA_kuwasys20} zu sehen, entworfen worden. Es stellt erste Überlegungen der Softwarearchitektur, mit konkreten Objekten inklusiver ihrer Attribute, dar und bildet ebenfalls die Beziehungen von Objekten zueinander ab. Genau genommen handelt es sich hierbei um ein 'abgespecktes' Klassendiagramm, in welchem die grobe Softwarestruktur erkennbar sein soll.
+Im nächsten Schritt unserer Modellierung ist das statische Analysemodell, unter \prettyref{fig:UML_SA_kuwasys20} zu sehen, entworfen worden. Es stellt erste Überlegungen der Softwarearchitektur mit konkreten Objekten inklusive ihrer Attribute dar und bildet ebenfalls die Beziehungen von Objekten zueinander ab. Genau genommen handelt es sich hierbei um ein 'abgespecktes' Klassendiagramm, in welchem die grobe Software-struktur erkennbar sein soll.
 
-Die rechteckigen Formen stellen Klassen dar, die oben als Beschriftung ihren Namen tragen, unten die Attribute die zu ihr gehören. Die einfachen Linien sind Assoziationen zwischen den Klassen und können als Beziehungen interpretiert werden. Sie tragen einen Rollennamen und eine Multiplizität, um nachvollziehen zu können um wieviele Objekte einer Klasse es sich später mindestens und maximal handelt.
+Die rechteckigen Formen stellen Klassen dar, die oben als Beschriftung ihren Namen tragen, unten die Attribute, die zu ihr gehören. Die einfachen Linien sind Assoziationen zwischen den Klassen und können als Beziehungen interpretiert werden. Sie tragen einen Rollennamen und eine Multiplizität, um nachvollziehen zu können, um wieviele Objekte einer Klasse es sich später mindestens und maximal handelt.
 Die Rechtecke mit der Beschriftung \texttt{$<<$dataType$>>$ + String} stellen selbstdefinierte Datentypen dar.
-Die Besonderheit in diesem Diagramm ist die Komposition (Assoziation mit einseitg schwarzer Raute). Sie sagt aus dass die Beziehung zwischen zwei Klassen einer starke Form der Aggregation entspricht. Die Teilklasse (Notenliste) kann also nur bestehen, solange die Aggregatklasse (Kurs) auch besteht. Würde, angewendet auf dieses Beispiel, ein Kurs gelöscht werden, würde auch der dazugehörige Notenlisteneintrag gelöscht werden. (\cite{BalzertH_UML2}, 18)
+Die Besonderheit in diesem Diagramm ist die Komposition (Assoziation mit einseitg schwarzer Raute). Sie sagt aus, dass die Beziehung zwischen zwei Klassen einer starken Form der Aggregation entspricht. Die Teilklasse (Notenliste) kann also nur bestehen, solange die Aggregatklasse (Kurs) auch besteht. Würde, angewendet auf dieses Beispiel, ein Kurs gelöscht werden, würde auch der dazugehörige Notenlisteneintrag gelöscht werden. (\cite{BalzertH-UML2}, 18)
 
-In unserem Projekt entstanden zum Zeitpunkt des Softwareentwurfs 3 Klassen, die später für eine Interaktion mit dem System benötigt werden und dementsprechend die wichtigsten Objekte abbilden. Die Klasse für die Notenübersicht und für Kurse. Die verschiedenen Rollen wurden als Unterklassen der Klasse 'User' modelliert. Einzelne Datentypen, so bspw. für Daten zur Zeiterfassung (Datum) und zur Definition einzelner konstanter Strings (Name), wie die Rollen, wurden zur Vereinfachung vorgesehen.
-Die Rollennamen sowie die Multiplizitäten der Assoziationen dürften selbsterklärend sein.
-In Abschnitt \prettyref{sec:Implementierung} wird später näher auf die restlichen Handler- und Helper-Klassen eingegangen
+In unserem Projekt entstanden zum Zeitpunkt des Softwareentwurfs 3 Klassen, die später für eine Interaktion mit dem System benötigt werden und dementsprechend die wichtigsten Objekte abbilden. Die verschiedenen Rollen wurden als Unterklassen der Klasse 'User' modelliert. Einzelne Datentypen, so bspw. für Daten zur Zeiterfassung (Datum) und zur Definition einzelner konstanter Strings (Name), wie die Rollen, wurden zur Vereinfachung vorgesehen.
+Die Rollennamen sowie die Multiplizitäten der Assoziationen, dürften selbsterklärend sein.
+In Abschnitt \prettyref{sec:Implementierung} wird später näher auf die restlichen Handler- und Helper-Klassen eingegangen.
 
 % Statisches Analyse Diagramm
 \begin{figure}[H]
@@ -153,7 +153,7 @@ In Abschnitt \prettyref{sec:Implementierung} wird später näher auf die restlic
 \subsection{Benutzerschnittstellen und Rollensystem}\label{subsec:Benutzerschnittstellen und Rollensystem}
 
 Das Kurswahlsystem der Schillerschule soll, laut Anforderungen, webbasiert mit Hilfe von verschiedenen Rollen konfiguriert und benutzt werden können.
-Das System muss hierzu simultane Interaktionen, eines jeden Rollentyps, mit dem System zulassen. 
+Das System muss hierzu simultane Interaktionen eines jeden Rollentyps mit dem System zulassen. 
 
 Per Aufgabendefinition liegen die vier Rollen, wie in \prettyref{subsec:Anforderungen an das System} bereits behandelt, zugrunde:
 
@@ -164,13 +164,13 @@ Per Aufgabendefinition liegen die vier Rollen, wie in \prettyref{subsec:Anforder
   \item Admin
 \end{itemize}
 
-Anhand der bereits vorgestellten \ac{OOM} sind, vor der Implementierung des Systems, die Rollenrechte und -richtlinien welche in den folgenden drei Unterabschnitten genaue beschrieben werden, modelliert worden.
+Anhand der bereits vorgestellten \ac{OOM} sind, vor der Implementierung des Systems, die Rollenrechte und -richtlinien, welche in den folgenden drei Unterabschnitten genauer beschrieben werden, modelliert worden.
 
 \subsubsection{Die Rolle der Schüler}
 
 Bei der Rolle der Schüler handelt es sich um die einfachste des Systems. 
-Sie hat die wenigsten Rechte und kann hauptsächlich nur passiv, Ausnahme bildet hier die Kurswahl selbst, mit dem System interagieren.
-Die Schüler welche das Kurswahlsystem erstmalig benutzen, befinden sich in der 7. Klasse. Jeder Schüler wird bis zum Abschluss der 9. Klasse das System benutzen.
+Sie hat die wenigsten Rechte und kann hauptsächlich nur passiv - Ausnahme bildet hier die Kurswahl selbst - mit dem System interagieren.
+Die Schüler, welche das Kurswahlsystem erstmalig benutzen, befinden sich in der 7. Klasse. Jeder Schüler wird bis zum Abschluss der 9. Klasse das System benutzen.
 Ein Schüler soll selbstständig seine Kurswahl für das jeweilige bevorstehende Tertial eines Schuljahres treffen können, dabei müssen bestimmte Abhängigkeiten eingehalten werden:
 
 \begin{enumerate}
@@ -181,18 +181,18 @@ Ein Schüler soll selbstständig seine Kurswahl für das jeweilige bevorstehende
 
 \subsubsection{Die Rolle der Lehrer}
 
-Der Rolle des Lehrers ist hingegen schon weitaus mehr Verantwortung auferlegt.
-Das System unserer Webandwendung unterscheidet allerdings zwischen zwei verschiedenen Arten von Lehrern grundsätzlich nicht aufgrund einer Rollendefinition. 
-Die Befugnis eines Lehrers sind lediglich abhängig von Werten die in der \ac{DB} gespeichert werden. 
-Ein Klassenlehrer wird nur dann ein Klassenlehrer wenn für ihn eine Abhängigkeit zu einer Klasse besteht. 
-Erst dann kann er die Funktionen, die einenm Klassenlehrer zu Verfügung stehen, nutzen.
-Ein Klassenlehrer muss auf die ihm zugerordnete Klasse zugreifen und alle Kurse eines jeden Schülers einsehen können.
+Die Rolle der Lehrer bringt im Vergleich zu Schülern mehr Verantwortung mit sich.
+Das System unserer Webanwendung unterscheidet allerdings zwischen zwei verschiedenen Arten von Lehrern grundsätzlich nicht aufgrund einer Rollendefinition. 
+Die Befugnisse eines Lehrers sind lediglich abhängig von Werten, die in der \ac{DB} gespeichert werden. 
+Ein Klassenlehrer wird nur dann ein Klassenlehrer, wenn für ihn eine Abhängigkeit zu einer Klasse besteht. 
+Erst dann kann er die Funktionen, die einem Klassenlehrer zur Verfügung stehen, nutzen.
+Ein Klassenlehrer muss auf die ihm zugeordnete Klasse zugreifen und alle Kurse eines jeden Schülers einsehen können.
 
 Das gleiche Prinzip gilt für Kurslehrer. 
-Beim anlegen eines Kurses (eine Funktion die jedem Lehrer generell zur Verfügung steht) wird dieser Kurs dem Lehrer fest zugeordnet und wird somit zum Mitverantwortlichen der Kursverwaltung. 
-Der Kurslehrer muss ebenfalls die Schüller einsehen können die sich in seinem Kurs befinden. Allerdings kann er nur ein Protokoll und eine Notenliste für Schüler in seinem Kurs führen.
+Beim Anlegen eines Kurses (eine Funktion, die jedem Lehrer generell zur Verfügung steht) wird dieser Kurs dem Lehrer fest zugeordnet und er wird somit zum Mitverantwortlichen der Kursverwaltung. 
+Der Kurslehrer muss ebenfalls die Schüller einsehen können, die sich in seinem Kurs befinden. Allerdings kann er nur ein Protokoll und eine Notenliste für Schüler in seinem Kurs führen.
 
-In Abhängigkeit zur administrativen Systemverwaltung, auf die im nächsten Teil-Block eingegangen wird, hat der Lehrer nun die Rechte seine Kurse zu verwalten.
+In Abhängigkeit zur administrativen Systemverwaltung, auf die im nächsten Teil-Block eingegangen wird, hat der Lehrer nun die Rechte, seine Kurse zu verwalten.
 
 Zur Vereinfachung der Handhabung des Systems ist bereits an diesem Punkt der Modellierung an ein internes Protokollierungssystem gedacht worden. 
 Es soll später die Kommunikation von Kurslehrern mit Klassenlehrern sowie die Kommunikation von Lehrern mit Schülern vereinfachen.
@@ -200,42 +200,26 @@ Im Rahmen unserer Projektarbeit wurde allerdings eine solche Funktionalität im 
 
 \subsubsection{Die administrative Rolle des Systems}
 
-Die administrativen Rechte des kompletten Systems stehen selbstverständlich nur dem Administrator zur Verfügung. Die Hauptaufgabe dieser Rolle im System ist es neue User ins System aufzunhemen und diese gegebenfalls zu Bearbeiten.
-Das gilt für das Hinzufügen und Bearbeiten von Schülern und Lehrern gleichermaßen, beide Rollen haben also nicht die Möglichkeit sich selbst zu Verwalten.
+Die administrativen Rechte des kompletten Systems stehen selbstverständlich nur dem Administrator zur Verfügung. Die Hauptaufgabe dieser Rolle im System ist, es neue User ins System aufzunehmen und diese gegebenfalls zu bearbeiten.
+Das gilt für das Hinzufügen und Bearbeiten von Schülern und Lehrern gleichermaßen, beide Rollen haben also nicht die Möglichkeit sich selbst zu verwalten.
 
-Darüber hinaus verwaltet der Admin den Status des Systems, das aktuelle Schuljar und die dazughörigen Tertiale. Außerdem ist er der Hauptverantwortliche der Kursverwaltung.
-Bevor ein Kurs stattfinden kann muss der Admin den Kurs aktivieren und für die Kurswahl zulassen. Eventuell müssen von ihm bestimmte Attribute eines Kurs noch angepasst werden können.
+Darüber hinaus verwaltet der Admin den Status des Systems, das aktuelle Schuljahr und die dazugehörigen Tertiale. Außerdem ist er der Hauptverantwortliche der Kursverwaltung.
+Bevor ein Kurs stattfinden kann, muss der Admin den Kurs aktivieren und für die Kurswahl zulassen. Eventuell müssen von ihm bestimmte Attribute eines Kurses noch angepasst werden können.
 Ein Admin kann außerdem Fächerverbünde erstellen, bearbeiten und erstellte Kurse einem Fächerverbund zuordnen.
 
 \subsubsection{Funktionalität des Systems}
 
-Die Einteilung eines kompletten Schuljahrs geschieht jeweils in Tertiale. Dies kann grafisch in \prettyref{fig:Schuljahreinteilung} nachvollzogen werden. 
+Die Einteilung eines kompletten Schuljahrs erfolgt in Tertiale. 
+Es war also nötig, im administrativen Bereich des Systems eine Funktionalität vorzusehen, die es dem Admin ermöglicht, das Schuljahr 'weiterzuschieben' und das entsprechende Tertial zu aktivieren.
+Diese Verwaltungstätigkeit ist unumgänglich mit der Kurswahl verknüpft und muss für jede Kurswahl in einem Tertial neu angepasst werden. 
+Entscheidungen, die hier während der Modellierung getroffen wurden, wurden im Hinblick auf ein möglichst einfaches \ac{UI} getroffen.
 
-%%
-% Schuljahreinteilung
-\begin{figure}[h]
-\begin{center}
-
-\begin{tikzpicture}
-    \node[draw=black, fill=yellow!20!] at (-2.5,5) {Unterteilung des Schuljahrs};
-    \pie{33.3/Tertial 1, 33.3/Tertial 2, 33.3/Tertial 3}
-\end{tikzpicture}
-
-\end{center}
-\caption[\textbf{Einteilung des Schuljahrs}]{Einteilung des Schuljahrs}
-\label{fig:Schuljahreinteilung}
-\end{figure}
-
-Es war also nötig im administrativen Bereich des Systems eine Funktionalität vorzusehen, die es dem Admin ermöglicht das Schuljahr 'weiterzuschieben' und das entsprechende Tertial zu zu aktivieren.
-Diese Verwaltungstätigkeit ist unumgänglich mit der Kurswahl verknüpft und muss für jede neu angepasst werden. 
-Entscheidungen die hier während der Modellierung getroffen wurden, wurden im Hinblick auf eine möglichst einfaches \ac{UI} getroffen.
-
-Jeder Kurs, der gewählt werden kann, gehört einem übergeordnetem Fächerverbund an, wie in \prettyref{fig:KursFaecherverbund} zu sehen ist.
+Jeder Kurs, der gewählt werden kann, gehört einem übergeordneten Fächerverbund an, auf welche im nächsten Abschnitt noch näher eingegangen wird.
 Allerdings gibt es noch weitere Eigenschaften die Kurse erfüllen können. Ein Kurs kann ein Religionskurs sein, welcher für eine bestimmte Konfession ausgerichtet ist oder ein Sportkurs.
 Ferner müssen Kurse als Pflichtkurse signifiziert werden können.
-Aufgrund der Fülle an Informationen die verarbeitet werden müssen, war es in der Phase der Modellierung ebenfalls sehr wichtig die Datenstrukturen und deren Abhängigkeiten möglichst einfach zu halten, um in der späteren Implementierungsphase eine unkomplizierte Benutzerschnittstelle entwicklen zu können. 
+Aufgrund der Fülle an Informationen, die verarbeitet werden müssen, war es in der Phase der Modellierung ebenfalls sehr wichtig, die Datenstrukturen und deren Abhängigkeiten möglichst einfach zu halten, um in der späteren Implementierungsphase eine unkomplizierte Benutzerschnittstelle entwickeln zu können. 
 
-Außer den beiden vorgestellten Datenverarbeitungen existieren selbstverständlich noch weitere, die vor allem im Sinne der Übersichtlichkeit des System  zum Tragen kommen. 
+Außer den beiden vorgestellten Datenverarbeitungen existieren selbstverständlich noch weitere, die vor allem im Sinne der Übersichtlichkeit des Systems zum Tragen kommen. 
 Dabei handelt es sich allerdings um Daten, die dynamisch während der Laufzeit erzeugt werden.
 Im Gegensatz zu den dynamisch generierten Daten während der Laufzeit des Systems ist für alle anderen Daten zur Informationsverarbeitung eine Speicherung in einer Datenbank unabdingbar.
 Im folgenden Unterabschnitt soll deshalb näher auf die Modellierung und Umsetzung des verwendeten Informationssystems eingegangen werden.
@@ -243,7 +227,7 @@ Im folgenden Unterabschnitt soll deshalb näher auf die Modellierung und Umsetzu
 \subsection{Datenbankmodellierung}\label{subsec:Datenbankmodellierung}
 
 Für die \ac{DB}-Modellierung wurde als erstes ein \ac{ER-Modell} skizziert, welches die Abhängigkeiten und Beziehungen zueinander verdeutlichen soll. Dieses ist in \prettyref{subsec:ERModell} abgebildet. Anschließend wurde das gesamte \ac{ER-Modell} in ein relationales Modell transformiert.
-Mit dem entstandenen Relationalen Modell, welche in \prettyref{subsec:RelModell} dokumentiert ist, konnte anschließend auf dem Server die \ac{DB} inklusive der nötigen Tabellen erstellt werden.
+Mit dem entstandenen Relationalen Modell, welches in \prettyref{subsec:RelModell} dokumentiert ist, konnte anschließend auf dem Server die \ac{DB} inklusive der nötigen Tabellen erstellt werden.
 
 \subsubsection{Entity-Relationship Modell}\label{subsec:ERModell}
 
@@ -251,10 +235,10 @@ Die \prettyref{fig:ERModell} zeigt das oben erwähnte \ac{ER-Modell} nach \iz{Pe
 
 \textbf{Aufbau des \ac{ER-Modell}s:}
 
-Bei den blauen Rechtecken handelt es sich in diesem Modell um sogenannte Entities (Entity-Typen), die sind Dinge die in der \ac{DB} als solche abgebildet werden sollen. Sie stellen eine eigene Tabelle dar. Die gelben Ellipsen die diese umgeben, sind die Attribute (Attribut-Typen) der Entities, sie veranschaulichen die Daten welche Entities enthalten (können).
-Die roten Rauten bezeichnen Beziehungen (Beziehungs-Typen) die zwischen Entities herrschen.
+Bei den blauen Rechtecken handelt es sich in diesem Modell um sogenannte Entities (Entity-Typen), die in der \ac{DB} als solche abgebildet werden sollen. Sie stellen eine eigene Tabelle dar. Die gelben Ellipsen, die diese umgeben, sind die Attribute (Attribut-Typen) der Entities, sie veranschaulichen die Daten, welche Entities enthalten (können).
+Die roten Rauten bezeichnen Beziehungen (Beziehungs-Typen), die zwischen Entities herrschen.
 
-Das grüne Rechteck ist ein Spezialfall des 'Kurs'-Entities. Es wird als eigene Tabelle in der \ac{DB} dargestellt, ist im weitesten Sinne allerdings einer Aversion des 'Konfessions'-Attribut des 'Kurs'-Entities. Denkt man in diesem Fall an die \ac{UML}, so wäre an dieser Stelle wohl eine 'Enumeration' als eigener Datentype in Frage gekommen (\cite{BalzertH_UML2}, 10 - 11).
+Das grüne Rechteck ist ein Spezialfall des 'Kurs'-Entities. Es wird als eigene Tabelle in der \ac{DB} dargestellt, ist im weitesten Sinne allerdings eine Aversion des 'Konfessions'-Attributs des 'Kurs'-Entities. Denkt man in diesem Fall an die \ac{UML}, so wäre an dieser Stelle wohl eine 'Enumeration' als eigener Datentyp in Frage gekommen (\cite{BalzertH-UML2}, 10 - 11).
 
 \tikzstyle{every entity} = [top color=white, bottom color=blue!30, draw=blue!50!black!100, drop shadow]
 \tikzstyle{every weak entity} = [drop shadow={shadow xshift=.7ex, shadow yshift=-.7ex}]
@@ -332,7 +316,7 @@ Das grüne Rechteck ist ein Spezialfall des 'Kurs'-Entities. Es wird als eigene 
 
 \textbf{Interpretation des \ac{ER-Modell}s:}
 
-Um die Interpretation, also den Gedankengang der \ac{DB}-Modellierung, zu verdeutlichen macht es Sinn, die Beziehungen genau auszuformulieren.
+Um die Interpretation, also den Gedankengang der \ac{DB}-Modellierung, zu verdeutlichen, macht es Sinn, die Beziehungen genau auszuformulieren.
 Dabei werden alle Beziehungen zu jedem Entity betrachtet, begonnen mit dem Entity.
 Zusätzlich sollen die Multiplizitäten mit einfließen, um die Abhängigkeiten zu verdeutlichen und um die Transformation in ein Datenbankmodell zu erleichtern.
 
@@ -353,9 +337,9 @@ oder
 $E_{B}$ ist $(1;M)$ in Beziehung $R_{AB}$ zu $E_{A}$
 \end{center}
 
-Wobei die erste Zahl bei der Angabe der Multiplizität, also die vor dem Semikolon (';') für die minimalste, die zweite Zahl für die maximalste Gültigkeit unter der bestendenen Bedingung steht.
+Wobei die erste Zahl bei der Angabe der Multiplizität, also die vor dem Semikolon für die minimalste, die zweite Zahl für die maximalste Gültigkeit unter der bestehenden Bedingung steht.
 
-Begonnen werden soll die genauere Betrachtungsweise mit dem Entity 'User':
+Die genauere Betrachtungsweise soll mit dem Entity 'User' begonnen werden:
 
 \begin{enumerate}
   \item User - Rolle (beidseitig):	
@@ -372,7 +356,7 @@ Begonnen werden soll die genauere Betrachtungsweise mit dem Entity 'User':
   
   \item User - Notenliste:
     \begin{itemize}
-      \item ein Schüler hat $(1;1)$ Eintrag in der Notenliste für jeweils einen fest zugeordneten Kurs (Vrgl. Kurs - Notenliste)
+      \item ein Schüler hat $(1;1)$ Eintrag in der Notenliste für jeweils einen fest zugeordneten Kurs (Vgl. Kurs - Notenliste)
     \end{itemize}
 
 \end{enumerate}
@@ -421,10 +405,10 @@ Der nächste Schritt ist nun die Transformation von \ac{ER-Modell} in das Relati
 \subsubsection{Relationales Modell}\label{subsec:RelModell}
 
 Bei der Beschreibung des Relationalen Modells der KuWaSys-\ac{DB} ist das Hauptaugenmerk auf die komplette Datenverarbeitung gelegt, also vor allem auch Implementierungen für Vorgänge die für den Benutzer des Systems nicht unmittelbar zu sehen sind.
-Daten die für die Oberfläche und die einzelnen Benutzerschnittstellen eine tragende Rolle spielen sollen unter (Abschnitt Benutzerschnittstellen) gesondert behandelt werden und werden im Laufe dieses Kapitels nur kurz angesprochen.
+Daten, die für die Oberfläche und die einzelnen Benutzerschnittstellen eine tragende Rolle spielen, sollen später gesondert behandelt werden und werden im Laufe dieses Kapitels nur kurz angesprochen.
 
 Die Vorüberlegungen zur Transformation von mehrwertigen Attributen von Entities sind bereits abgeschlossen.
-Prinzipiell kann man mit der Transformation, wie folgt vorgehen (\cite{VossenG-DDD}, 104 ff.):
+Prinzipiell kann man mit der Transformation wie folgt vorgehen (\cite{VossenG-DDD}, 104 ff.):
 
 \begin{enumerate}
  \item Jedes Entity wird in eine relationale Form gebracht
@@ -435,10 +419,10 @@ Prinzipiell kann man mit der Transformation, wie folgt vorgehen (\cite{VossenG-D
  \end{itemize}
 \end{enumerate}
 
-Die Beschreibung $1:1$- bzw $1:N$-Beziehung bedeutet in diesem Fall allerdings nicht wie zuvor, ein Minimum auf der linken und das Maximum auf der rechten Seite. 
+Die Beschreibung $1:1$- bzw $1:N$-Beziehung bedeutet in diesem Fall allerdings nicht wie zuvor ein Minimum auf der linken und das Maximum auf der rechten Seite. 
 Hierbei werden nur noch die maximalen Werte der beiden Multiplizitätsangaben berücksichtigt. Dies gilt analog für alle Angaben der Multiplizitäten.
 
-Sollte bei der Transformation $(Punkt$ $2)$ eine Rolle spielen, müssen Attribute in bereits bestehende Relationsschemata aufgenommen werden. Folgende Regeln treten dann in Kraft:
+Sollte bei der Transformation unter Punkt $2$ eine Rolle spielen, müssen Attribute in bereits bestehende Relationsschemata aufgenommen werden. Folgende Regeln treten dann in Kraft:
 \begin{enumerate}
  \item Zweistellige $1:1$-Beziehung
  \begin{itemize}
@@ -448,8 +432,8 @@ Sollte bei der Transformation $(Punkt$ $2)$ eine Rolle spielen, müssen Attribut
  \item Zweistellige $1:N$-Beziehung
  \begin{itemize}
   \item ein Entity stellt ein eigenes Relationsschema dar
-  \item erste Möglichkeit: die Attribute des Entities welches die maximale Multiplizität von $1$ aufweist wird hingegen dem Realtionsschema mit der maximalen Multiplizität von $N$ in Form von Fremdschlüsseln zugeschrieben
-  \item zweite Möglichkeit: es wird ein eigenes Relationsschema für die Beziehung der beiden Entities angelegt. Dieses neu entstande Schema erhält dann Attribute, welche widerum Fremdschlüssel der beiden anderen Entities sind
+  \item erste Möglichkeit: die Attribute des Entities, welche die maximale Multiplizität von $1$ aufweisen, wird hingegen dem Realtionsschema mit der maximalen Multiplizität von $N$ in Form von Fremdschlüsseln zugeschrieben
+  \item zweite Möglichkeit: es wird ein eigenes Relationsschema für die Beziehung der beiden Entities angelegt. Dieses neu entstandene Schema erhält dann Attribute, welche wiederum Fremdschlüssel der beiden anderen Entities sind
  \end{itemize}
 \end{enumerate}
 
@@ -536,8 +520,8 @@ teilnehmerzahl:integer, pflichtkurs:boolean, sport:boolean )\}
 
 \subsection{Konfiguration der Laufzeitumgebung und des Servers}\label{subsec:Konfiguration der Laufzeitumgebung und des Server}
 
-Dieses Kapitel ist als Zwischenschritt, von der Modellierung zur Implementierung, unseres Softwareprojekts zu verstehen.
-Zum Einen galt es eine komplette bestehende Infrastruktur zu überblicken und zu verstehen (dieser Schritt kann als eine Art der Modellierung verstanden werden)
+Dieses Kapitel ist als Zwischenschritt von der Modellierung zur Implementierung unseres Softwareprojekts zu verstehen.
+Zum Einen galt es, eine komplette bestehende Infrastruktur zu überblicken und zu verstehen (dieser Schritt kann als eine Art der Modellierung verstanden werden),
 zum Anderen musste ein komplettes neues System einwandfrei funktionsfähig eingebettet werden (zu vergleichen mit dem Schritt der Implementierung).
 
 \textbf{Sichtung der bestehenden Infrastruktur:}
@@ -548,7 +532,7 @@ Diese beinhaltet eine virtuelle Infrastruktur \gls{VMWare} ESXi auf der ein \ac{
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[
-  scale=0.1,
+  scale=0.9,
   font=\sffamily,
   every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
   source/.style={draw,thick,rounded corners,fill=yellow!20,inner sep=.3cm},
@@ -614,14 +598,14 @@ Diese beinhaltet eine virtuelle Infrastruktur \gls{VMWare} ESXi auf der ein \ac{
 \label{fig:Netzwerkstruktur}
 \end{figure}
 
-Prinzipiell wäre eine Verwendung dieser virtuellen \gls{Appliance} zum Hosting der \ac{Webapp} möglich. Um jedoch die Systemsicherheit zu erhöhen ist eine weitere virtuelle Appliance, die nur das Kurswahlsystem bereitstellt die bessere Wahl.
+Prinzipiell wäre eine Verwendung dieser virtuellen \gls{Appliance} zum Hosting der \ac{Webapp} möglich. Um jedoch die Systemsicherheit zu erhöhen, ist eine weitere virtuelle Appliance, die nur das Kurswahlsystem bereitstellt, die bessere Wahl.
 \iz{Ubuntu Server 12.04 LTS}{http://www.ubuntu.com/} läuft auf diesem virtuellen Rechner, der sich wie der oben genannte SLES in der \gls{DMZ} der virtuellen Netzwerkinfrastruktur befindet.
 
 \textbf{Integration in die Infrastruktur:}
 
 Ein PostreSQL-Server dient zur Datenhaltung und ein Apache Tomcat 7 zur Auslieferung der \ac{Webapp}. Nach Konfiguration (und überfälligem reboot) der Astaro Firewall im Keller der Schule ist die Webapp jetzt über das Intranet an allen Rechnern im Schulnetz erreichbar (\url{http://192.168.1.222:8080/kuwasys20}). Die Erreichbarkeit über das Internet ist seit der Freischaltung der entsprechenden Ports auf den BelWü-Server und umgekehrt gegeben (\url{http://141.10.50.250:8080/kuwasys20}).
 Diese Adressen werden auf der Homepage der Schillerschule und im Intranet verlinkt, sodass keine weitere Maskierung wie Subdomains oder lokale DNS-Einträge notwendig ist.
-Die Admnistration des Ubuntu Servers kann im Intranet von einer VMWare Management Console aus erfolgen, für schnelles Eingreifen wurde ein SSH Zugang eingerichtet, der im Internet erreichbar ist.
+Die Administration des Ubuntu Servers kann im Intranet von einer VMWare Management Console aus erfolgen, für schnelles Eingreifen wurde ein SSH Zugang eingerichtet, der im Internet erreichbar ist.
 
 In \prettyref{fig:Netzwerkstruktur} ist die neue Struktur des Netzwerks dargestellt.
 
